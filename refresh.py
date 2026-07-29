@@ -151,6 +151,11 @@ def main():
 
     tpl = open(os.path.join(HERE, "dashboard_template.html")).read()
     html = tpl.replace("__COMPACT__", json.dumps(compact)).replace("__ACTIVITY__", act)
+    logo = os.path.join(HERE, "logo_white.png")
+    if "__LOGO_WHITE__" in html and os.path.exists(logo):
+        import base64
+        html = html.replace("__LOGO_WHITE__",
+            "data:image/png;base64," + base64.b64encode(open(logo, "rb").read()).decode())
     out = os.path.join(HERE, "dashboard.html")
     open(out, "w").write(html)
     print(f"Built {out} ({len(html)} bytes) | rows={len(compact['rows'])} "

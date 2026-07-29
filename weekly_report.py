@@ -8,7 +8,7 @@ Data source:
   - elif REPORT_LOCAL_OPPS is set -> load that opportunities json (for local testing)
 Filtering uses lead-creation date, matching the dashboard & GHL Agent Report.
 """
-import json, os, sys, subprocess, urllib.parse, time
+import json, os, sys, subprocess, urllib.parse, time, base64
 from datetime import datetime, timezone, timedelta
 
 LOC = os.environ.get("GHL_LOCATION_ID", "3Nu5tCDlBMvA823iS8uy")
@@ -20,6 +20,13 @@ REPS = {"Matthew Ford": "tmnM3l9311q3M1AnExCf", "Bonnie Puntasecca": "0PRUgBISGk
         "Alyssa Erspamer": "Bwvy1ZmK1ueaSml9492D", "Charity Byars": "bQI1XlzuGb6uMTxEqtCR"}
 CF_CRUISE = "HTO96SRNXYudIOCw0bWK"; CF_PAX = "btzbFPFGh21U29ingYKT"
 TOKEN = os.environ.get("GHL_PIT")
+
+def _logo():
+    p = os.path.join(HERE, "logo_navy.png")
+    if os.path.exists(p):
+        return "data:image/png;base64," + base64.b64encode(open(p, "rb").read()).decode()
+    return ""
+LOGO = _logo()
 
 
 def get(url):
@@ -147,8 +154,8 @@ def build_html(opps, now):
     <div style="width:960px;background:#eef1f6;padding:26px 28px">
       <table cellpadding="0" cellspacing="0" style="width:100%"><tr>
         <td><table cellpadding="0" cellspacing="0"><tr>
-          <td><div style="width:40px;height:40px;border-radius:10px;background:#0f7d6b;color:#fff;text-align:center;line-height:40px;font-size:20px">⚓</div></td>
-          <td style="padding-left:12px"><div style="font-size:20px;font-weight:800;color:#0e2438">Pontoon Saloon — Weekly Sales Report</div>
+          <td><img src="{LOGO}" alt="Pontoon Saloon" style="height:54px;width:auto;display:block"></td>
+          <td style="padding-left:14px"><div style="font-size:20px;font-weight:800;color:#0e2438">Pontoon Saloon — Weekly Sales Report</div>
             <div style="font-size:13px;color:#63748b">Week of {span} · vs the week before</div></td></tr></table></td>
         <td style="text-align:right;color:#8a98ab;font-size:12px">Nashville, TN<br>Sales Pipeline · read-only from GoHighLevel</td>
       </tr></table>

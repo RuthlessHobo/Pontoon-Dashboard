@@ -35,7 +35,7 @@ body{margin:0;background:var(--bg);color:var(--ink);font-family:ui-sans-serif,sy
 .app{display:grid;grid-template-columns:236px 1fr;min-height:100vh}
 .side{background:var(--navy);color:#cdd9e6;padding:20px 16px;display:flex;flex-direction:column;gap:22px;position:sticky;top:0;height:100vh}
 .brand{display:flex;align-items:center;gap:11px}
-.brand .mark{width:34px;height:34px;border-radius:9px;background:linear-gradient(135deg,var(--brand),#0b5f52);display:grid;place-items:center;font-size:18px;flex:none}
+.brand .mark{height:42px;width:auto;flex:none}
 .brand b{color:#fff;font-size:15px;font-weight:700;line-height:1.1}
 .brand span{display:block;font-size:11px;color:#7d93a8}
 .nav{display:flex;flex-direction:column;gap:2px}
@@ -109,7 +109,7 @@ svg{display:block;width:100%;overflow:visible}
 
 <div class="app">
   <aside class="side">
-    <div class="brand"><div class="mark">⚓</div><div><b>Pontoon Saloon</b><span>Sales Command Center</span></div></div>
+    <div class="brand"><img class="mark" src="__LOGO_WHITE__" alt="Pontoon Saloon"><div><b>Pontoon Saloon</b><span>Sales Command Center</span></div></div>
     <nav class="nav" id="nav">
       <a data-view="priv" class="active"><span class="ic">⛵</span> Private Cruise</a>
       <a data-view="all"><span class="ic">📊</span> All Leads</a>
