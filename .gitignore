@@ -4,3 +4,5 @@ dashboard.html
 .ghl_token
 __pycache__/
 *.pyc
+report.html
+report.png

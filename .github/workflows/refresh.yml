@@ -1,14 +1,15 @@
 name: Pontoon Dashboard — hourly refresh + Pages deploy
 
-# Rebuilds the dashboard from live GHL data every hour and deploys to GitHub Pages,
-# giving a stable HTTPS URL you can embed in GHL/Stannect via an iframe widget.
-# READ-ONLY against GoHighLevel. Token comes from the GHL_PIT repo secret and is
-# never written into the repo. The built dashboard is deployed to Pages only — it is
-# NOT committed to git, so sales figures stay out of the repository.
+# Hourly: rebuild the live dashboard AND the weekly-report image from live GHL data
+# (read-only), then deploy both to GitHub Pages:
+#   /            -> interactive dashboard (embed in GHL)
+#   /report.png  -> weekly snapshot image (embed in the GHL weekly email)
+# report.png shows the last COMPLETED Mon-Sun week, so it only changes each Monday.
+# Token comes from the GHL_PIT secret; no data or credentials are committed.
 
 on:
   schedule:
-    - cron: "0 * * * *"      # top of every hour (UTC)
+    - cron: "0 * * * *"
   workflow_dispatch: {}
 
 permissions:
@@ -31,13 +32,20 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: "3.11"
-      - name: Build dashboard from live GHL data
+
+      - name: Build dashboard + weekly report image
         env:
           GHL_PIT: ${{ secrets.GHL_PIT }}
         run: |
           python3 refresh.py
+          python3 weekly_report.py
+          pip install --quiet playwright
+          python3 -m playwright install --with-deps chromium
+          python3 render_png.py
           mkdir -p _site
           cp dashboard.html _site/index.html
+          cp report.png _site/report.png
+
       - uses: actions/upload-pages-artifact@v3
         with:
           path: _site
