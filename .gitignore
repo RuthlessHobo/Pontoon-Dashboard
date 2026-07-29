@@ -1,0 +1,6 @@
+# Never commit data or credentials — only code lives here.
+dashboard.html
+*.json
+.ghl_token
+__pycache__/
+*.pyc

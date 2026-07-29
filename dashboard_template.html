@@ -1,0 +1,348 @@
+<title>Pontoon Saloon — Sales Rep Dashboard</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+:root{
+  --bg:#eef1f6; --card:#ffffff; --ink:#16202e; --muted:#63748b; --faint:#8a98ab;
+  --line:#e4e9f1; --navy:#0e2438; --navy-2:#16324c; --brand:#0f7d6b; --brand-soft:#dcefe9;
+  --gold:#b57614; --gold-soft:#f6ecd8; --good:#16a34a; --warn:#d97706; --bad:#dc2626;
+  --blue:#3b6fd4; --purple:#8b3fc4; --chart-grid:#eef2f7;
+  --shadow:0 1px 2px rgba(16,32,50,.06),0 2px 8px rgba(16,32,50,.05);
+}
+@media (prefers-color-scheme:dark){:root{
+  --bg:#0a1017; --card:#121c28; --ink:#e7eef6; --muted:#93a4b8; --faint:#6b7d92;
+  --line:#233040; --navy:#0a1826; --navy-2:#123049; --brand:#2cb6a0; --brand-soft:#123029;
+  --gold:#d99a2b; --gold-soft:#2a2314; --good:#3fbf6b; --warn:#e0982f; --bad:#ef5350;
+  --blue:#5b8def; --purple:#b06ee0; --chart-grid:#1d2836;
+  --shadow:0 1px 2px rgba(0,0,0,.3),0 2px 10px rgba(0,0,0,.25);
+}}
+:root[data-theme="dark"]{
+  --bg:#0a1017; --card:#121c28; --ink:#e7eef6; --muted:#93a4b8; --faint:#6b7d92;
+  --line:#233040; --navy:#0a1826; --navy-2:#123049; --brand:#2cb6a0; --brand-soft:#123029;
+  --gold:#d99a2b; --gold-soft:#2a2314; --good:#3fbf6b; --warn:#e0982f; --bad:#ef5350;
+  --blue:#5b8def; --purple:#b06ee0; --chart-grid:#1d2836;
+  --shadow:0 1px 2px rgba(0,0,0,.3),0 2px 10px rgba(0,0,0,.25);
+}
+:root[data-theme="light"]{
+  --bg:#eef1f6; --card:#ffffff; --ink:#16202e; --muted:#63748b; --faint:#8a98ab;
+  --line:#e4e9f1; --navy:#0e2438; --navy-2:#16324c; --brand:#0f7d6b; --brand-soft:#dcefe9;
+  --gold:#b57614; --gold-soft:#f6ecd8; --good:#16a34a; --warn:#d97706; --bad:#dc2626;
+  --blue:#3b6fd4; --purple:#8b3fc4; --chart-grid:#eef2f7;
+  --shadow:0 1px 2px rgba(16,32,50,.06),0 2px 8px rgba(16,32,50,.05);
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;font-size:14px;line-height:1.45;-webkit-font-smoothing:antialiased}
+.num{font-variant-numeric:tabular-nums}
+.app{display:grid;grid-template-columns:236px 1fr;min-height:100vh}
+.side{background:var(--navy);color:#cdd9e6;padding:20px 16px;display:flex;flex-direction:column;gap:22px;position:sticky;top:0;height:100vh}
+.brand{display:flex;align-items:center;gap:11px}
+.brand .mark{width:34px;height:34px;border-radius:9px;background:linear-gradient(135deg,var(--brand),#0b5f52);display:grid;place-items:center;font-size:18px;flex:none}
+.brand b{color:#fff;font-size:15px;font-weight:700;line-height:1.1}
+.brand span{display:block;font-size:11px;color:#7d93a8}
+.nav{display:flex;flex-direction:column;gap:2px}
+.nav a{display:flex;align-items:center;gap:10px;padding:9px 11px;border-radius:8px;color:#aebccd;font-weight:500;font-size:13.5px;cursor:pointer;transition:.12s}
+.nav a:hover{background:var(--navy-2);color:#fff}
+.nav a.active{background:var(--brand);color:#fff}
+.nav a .ic{width:16px;text-align:center}
+.side .foot{margin-top:auto;font-size:11.5px;color:#6f869b;border-top:1px solid rgba(255,255,255,.08);padding-top:14px;line-height:1.5}
+.live{display:inline-flex;align-items:center;gap:6px;color:#8fe6d3}
+.dot{width:7px;height:7px;border-radius:50%;background:#2fd6b6;animation:pulse 2.4s infinite}
+@keyframes pulse{0%{box-shadow:0 0 0 0 rgba(47,214,182,.5)}70%{box-shadow:0 0 0 7px rgba(47,214,182,0)}100%{box-shadow:0 0 0 0 rgba(47,214,182,0)}}
+@media (prefers-reduced-motion:reduce){.dot{animation:none}}
+.main{padding:22px 26px 40px;min-width:0}
+.top{display:flex;align-items:flex-start;justify-content:space-between;gap:16px;flex-wrap:wrap;margin-bottom:14px}
+.top h1{margin:0;font-size:21px;font-weight:750;letter-spacing:-.3px}
+.top .sub{color:var(--muted);font-size:13px;margin-top:3px}
+.controls{display:flex;gap:8px;align-items:center;flex-wrap:wrap}
+select,.btn{background:var(--card);border:1px solid var(--line);border-radius:8px;padding:8px 11px;font-size:13px;color:var(--ink);box-shadow:var(--shadow);font-family:inherit;cursor:pointer;font-weight:600}
+.ctl-lab{font-size:10.5px;text-transform:uppercase;letter-spacing:.5px;color:var(--muted);font-weight:700;margin:0 2px 0 6px}
+.rangebadge{font-size:12px;color:var(--muted);margin:2px 0 16px}
+.rangebadge b{color:var(--ink)}
+.seg{display:inline-flex;background:var(--card);border:1px solid var(--line);border-radius:9px;padding:3px;box-shadow:var(--shadow);margin-bottom:18px}
+.seg button{border:0;background:transparent;color:var(--muted);font-weight:600;font-size:13px;padding:8px 15px;border-radius:7px;cursor:pointer;font-family:inherit;transition:.12s}
+.seg button.on{background:var(--brand);color:#fff}
+.view{display:none}.view.show{display:block;animation:fade .22s ease}
+@keyframes fade{from{opacity:0;transform:translateY(4px)}to{opacity:1;transform:none}}
+.kpis{display:grid;grid-template-columns:repeat(auto-fill,minmax(170px,1fr));gap:13px;margin-bottom:16px}
+.kpi{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:15px 16px;box-shadow:var(--shadow);position:relative;overflow:hidden}
+.kpi .lab{font-size:11px;color:var(--muted);font-weight:600;text-transform:uppercase;letter-spacing:.5px;display:flex;align-items:center;gap:7px}
+.kpi .val{font-size:26px;font-weight:770;letter-spacing:-.6px;margin-top:8px;line-height:1}
+.kpi .meta{font-size:12px;color:var(--faint);margin-top:7px}
+.kpi .tag{position:absolute;top:13px;right:13px;font-size:10.5px;font-weight:700;padding:2px 8px;border-radius:20px}
+.tag.good{background:var(--brand-soft);color:var(--brand)}.tag.gold{background:var(--gold-soft);color:var(--gold)}
+.spark{width:11px;height:11px;border-radius:3px;flex:none}
+.grid{display:grid;grid-template-columns:repeat(12,1fr);gap:15px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:16px 18px;box-shadow:var(--shadow);min-width:0}
+.card h3{margin:0 0 2px;font-size:14.5px;font-weight:700}
+.card .desc{color:var(--muted);font-size:12px;margin-bottom:14px}
+.col-4{grid-column:span 4}.col-5{grid-column:span 5}.col-6{grid-column:span 6}.col-7{grid-column:span 7}.col-8{grid-column:span 8}.col-12{grid-column:span 12}
+@media(max-width:1080px){.col-4,.col-5,.col-6,.col-7,.col-8{grid-column:span 12}}
+.bars{display:flex;flex-direction:column;gap:11px}
+.bar-row{display:grid;grid-template-columns:130px 1fr auto;align-items:center;gap:11px;font-size:13px}
+.bar-row .nm{color:var(--ink);font-weight:550;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.track{height:9px;background:var(--chart-grid);border-radius:6px;overflow:hidden}
+.fill{height:100%;border-radius:6px;background:var(--brand)}.fill.g2{background:var(--gold)}
+.bar-row .vv{color:var(--muted);font-weight:650;min-width:46px;text-align:right}
+.scrollx{overflow-x:auto}
+table{width:100%;border-collapse:collapse;font-size:13px}
+th,td{text-align:right;padding:9px 10px;border-bottom:1px solid var(--line);white-space:nowrap}
+th:first-child,td:first-child{text-align:left}
+th{font-size:11px;text-transform:uppercase;letter-spacing:.4px;color:var(--muted);font-weight:650}
+tbody tr:last-child td{border-bottom:0}
+tbody tr.total{background:color-mix(in srgb,var(--brand) 7%,transparent);font-weight:700}
+tbody tr.total td{border-top:2px solid var(--line)}
+tbody tr.sel{background:color-mix(in srgb,var(--gold) 12%,transparent)}
+tbody tr:hover{background:color-mix(in srgb,var(--brand) 6%,transparent)}
+.who{display:flex;align-items:center;gap:9px}
+.av{width:26px;height:26px;border-radius:50%;display:grid;place-items:center;font-size:11px;font-weight:700;color:#fff;flex:none}
+.pill{display:inline-block;font-size:11.5px;font-weight:700;padding:2px 9px;border-radius:20px}
+.pill.good{background:var(--brand-soft);color:var(--brand)}.pill.mid{background:var(--gold-soft);color:var(--gold)}
+.subtle{color:var(--faint);font-size:11px}
+.note{background:color-mix(in srgb,var(--warn) 9%,var(--card));border:1px solid color-mix(in srgb,var(--warn) 30%,var(--line));border-radius:11px;padding:12px 14px;font-size:12.5px;color:var(--ink);display:flex;gap:11px;line-height:1.5}
+.note.info{background:color-mix(in srgb,var(--blue) 9%,var(--card));border-color:color-mix(in srgb,var(--blue) 30%,var(--line))}
+.note .i{color:var(--warn);font-size:15px;flex:none}.note.info .i{color:var(--blue)}
+.note b{font-weight:700}
+.empty{border:1.5px dashed var(--line);border-radius:12px;padding:20px;text-align:center;color:var(--muted);font-size:13px;line-height:1.6}
+svg{display:block;width:100%;overflow:visible}
+.foot-note{color:var(--faint);font-size:11.5px;margin-top:22px;text-align:center;line-height:1.6}
+@media(max-width:760px){.app{grid-template-columns:1fr}.side{position:static;height:auto;flex-direction:row;flex-wrap:wrap;gap:14px}.side .foot,.nav .ic{display:none}.nav{flex-direction:row;flex-wrap:wrap}}
+</style>
+
+<div class="app">
+  <aside class="side">
+    <div class="brand"><div class="mark">⚓</div><div><b>Pontoon Saloon</b><span>Sales Command Center</span></div></div>
+    <nav class="nav" id="nav">
+      <a data-view="priv" class="active"><span class="ic">⛵</span> Private Cruise</a>
+      <a data-view="all"><span class="ic">📊</span> All Leads</a>
+      <a data-view="score"><span class="ic">🧑‍💼</span> Rep Scorecard</a>
+    </nav>
+    <div class="foot">
+      <div class="live"><span class="dot"></span> Auto-refresh: hourly</div>
+      <div style="margin-top:7px">Sales analytics GHL can't do. Messaging activity (SMS/email/calls) lives in GHL's Agent Report.</div>
+    </div>
+  </aside>
+  <main class="main">
+    <div class="top">
+      <div>
+        <h1>Sales Rep Dashboard</h1>
+        <div class="sub">Nashville, TN · <span id="viewname">Private Cruise</span> · <span id="repname">Overall</span></div>
+      </div>
+      <div class="controls">
+        <span class="ctl-lab">Rep</span>
+        <select id="rep"></select>
+        <span class="ctl-lab">Range</span>
+        <select id="range">
+          <option value="30d">Last 30 days</option>
+          <option value="90d">Last 90 days</option>
+          <option value="mtd">This month</option>
+          <option value="lastmonth">Last month</option>
+          <option value="ytd">Year to date</option>
+          <option value="all" selected>All time</option>
+        </select>
+        <span class="ctl-lab">Compare</span>
+        <select id="compare">
+          <option value="none" selected>None</option>
+          <option value="prev">vs previous period</option>
+          <option value="yoy">vs last year</option>
+        </select>
+        <button class="btn" id="themeBtn">◐</button>
+      </div>
+    </div>
+    <div class="rangebadge">Showing <b id="rangelabel"></b> · <span id="rangedates"></span> · leads filtered by creation date (matches GHL Agent Report)</div>
+    <div class="seg" id="seg">
+      <button class="on" data-view="priv">⛵ Private Cruise</button>
+      <button data-view="all">📊 All Leads</button>
+      <button data-view="score">🧑‍💼 Rep Scorecard</button>
+    </div>
+    <section class="view show" id="v-priv"></section>
+    <section class="view" id="v-all"></section>
+    <section class="view" id="v-score"></section>
+    <div class="foot-note" id="footnote"></div>
+  </main>
+</div>
+
+<script>
+const CX = __COMPACT__;
+const ROWS = CX.rows;
+const REPS = CX.reps;
+const NOW = Date.parse(CX.data_through+"T23:59:59Z");
+const DAY=86400000;
+const avColors={};REPS.forEach((n,i)=>avColors[n]=['#0f7d6b','#b57614','#3b6fd4','#8b3fc4'][i]);
+const fmt=n=>Math.round(n).toLocaleString('en-US');
+const money=n=>'$'+Math.round(n).toLocaleString('en-US');
+const moneyK=n=>Math.abs(n)>=1000?'$'+(n/1000).toFixed(Math.abs(n)>=100000?0:1)+'K':'$'+Math.round(n);
+const mLbl=['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+const monKey=ms=>{const d=new Date(ms);return d.getUTCFullYear()+'-'+String(d.getUTCMonth()+1).padStart(2,'0');};
+const monShort=k=>mLbl[+k.split('-')[1]-1]+" '"+k.split('-')[0].slice(2);
+const dstr=ms=>{const d=new Date(ms);return mLbl[d.getUTCMonth()]+' '+d.getUTCDate()+', '+d.getUTCFullYear();};
+const initials=n=>n.split(' ').map(w=>w[0]).slice(0,2).join('');
+const STAGES=['New Lead','Attempted Call','Follow Up','Appt Booked','Proposal Sent','Proposal Signed (Won)','Work Complete'];
+
+let STATE={range:'all',compare:'none',rep:'Overall',view:'priv',scSeg:'all'};
+function bounds(key){
+  const nd=new Date(NOW);
+  if(key==='all')return[0,NOW];
+  if(key==='30d')return[NOW-30*DAY,NOW];
+  if(key==='90d')return[NOW-90*DAY,NOW];
+  if(key==='mtd')return[Date.UTC(nd.getUTCFullYear(),nd.getUTCMonth(),1),NOW];
+  if(key==='lastmonth')return[Date.UTC(nd.getUTCFullYear(),nd.getUTCMonth()-1,1),Date.UTC(nd.getUTCFullYear(),nd.getUTCMonth(),1)-1];
+  if(key==='ytd')return[Date.UTC(nd.getUTCFullYear(),0,1),NOW];
+  return[0,NOW];
+}
+const rangeLabels={all:'All time','30d':'Last 30 days','90d':'Last 90 days',mtd:'This month',lastmonth:'Last month',ytd:'Year to date'};
+function compareBounds(){const b=bounds(STATE.range);if(STATE.compare==='prev'){const len=(b[1]-b[0])||DAY;return[b[0]-len,b[0]-1];}if(STATE.compare==='yoy'){const Y=365*DAY;return[b[0]-Y,b[1]-Y];}return null;}
+function inRange(r,b){const t=r.c||r.s||0;return t>=b[0]&&t<=b[1];}  // lead-creation date, matches GHL Agent Report
+function segMatch(r,seg){return seg==='priv'?r.ct==='Private Cruise':true;}
+function repMatch(r){return STATE.rep==='Overall'||r.r===STATE.rep;}
+function workSet(seg,b){return ROWS.filter(r=>inRange(r,b)&&segMatch(r,seg)&&repMatch(r));}
+function calc(S){
+  const won=S.filter(r=>r.st==='w'),lost=S.filter(r=>r.st==='l'||r.st==='a'),open=S.filter(r=>r.st==='o');
+  const rev=won.reduce((a,r)=>a+r.v,0),pax=S.map(r=>r.p).filter(p=>p>0);
+  const ttc=won.filter(r=>r.s&&r.c&&r.s>r.c).map(r=>(r.s-r.c)/DAY);
+  return{n:S.length,won:won.length,lost:lost.length,open:open.length,rev,
+    avgDeal:won.length?rev/won.length:0,
+    conv:(won.length+lost.length)?won.length/(won.length+lost.length)*100:0,
+    avgPax:pax.length?pax.reduce((a,b)=>a+b,0)/pax.length:0,
+    ttc:ttc.length?ttc.reduce((a,b)=>a+b,0)/ttc.length:0};
+}
+function pctChg(cur,prev){return(prev==null||prev===0)?null:(cur-prev)/prev*100;}
+function delta(cur,prev){
+  if(STATE.compare==='none')return'';
+  if(prev==null||prev===0)return cur>0?' · <span class="subtle">no prior data</span>':'';
+  const d=pctChg(cur,prev),up=d>=0,c=up?'var(--good)':'var(--bad)';
+  return ` · <span style="color:${c};font-weight:700">${up?'▲':'▼'} ${Math.abs(d).toFixed(0)}%</span>`;
+}
+function kpi(lab,val,meta,tag,tagcls){return `<div class="kpi"><div class="lab">${lab}</div><div class="val num">${val}</div><div class="meta">${meta||''}</div>${tag?`<span class="tag ${tagcls||'good'}">${tag}</span>`:''}</div>`;}
+function bars(rows,fmtv,cls){const max=Math.max(...rows.map(r=>r[1]),1);return `<div class="bars">`+rows.map(r=>`<div class="bar-row"><div class="nm" title="${r[0]}">${r[0]}</div><div class="track"><div class="fill ${cls||''}" style="width:${Math.max(2,r[1]/max*100)}%"></div></div><div class="vv num">${fmtv(r[1])}</div></div>`).join('')+`</div>`;}
+function lineChart(obj,color){
+  const keys=Object.keys(obj).sort(),vals=keys.map(k=>obj[k]);
+  if(!keys.length)return`<div class="empty">No opportunities in this range.</div>`;
+  const W=560,H=170,pad=30,max=Math.max(...vals)*1.15||1;
+  const x=i=>pad+i*(W-pad*2)/(keys.length-1||1),y=v=>H-22-(v/max)*(H-46);
+  const pts=vals.map((v,i)=>[x(i),y(v)]);
+  const line=pts.map((p,i)=>(i?'L':'M')+p[0].toFixed(1)+' '+p[1].toFixed(1)).join(' ');
+  const area=line+` L ${x(keys.length-1)} ${H-22} L ${pad} ${H-22} Z`;
+  let grid='';for(let g=0;g<=2;g++){const gy=22+g*(H-46)/2;grid+=`<line x1="${pad}" y1="${gy}" x2="${W-pad}" y2="${gy}" stroke="var(--chart-grid)"/>`;}
+  const dots=pts.map((p,i)=>`<circle cx="${p[0]}" cy="${p[1]}" r="${i===pts.length-1?4.5:3}" fill="${color}" ${i===pts.length-1?'stroke="var(--card)" stroke-width="2"':''}/>`).join('');
+  const labs=keys.map((k,i)=>`<text x="${x(i)}" y="${H-6}" font-size="10" fill="var(--muted)" text-anchor="middle">${monShort(k)}</text>`).join('');
+  const vl=pts.map((p,i)=>`<text x="${p[0]}" y="${p[1]-9}" font-size="10" font-weight="700" fill="var(--ink)" text-anchor="middle">${vals[i]}</text>`).join('');
+  return`<svg viewBox="0 0 ${W} ${H}" role="img"><defs><linearGradient id="lg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="${color}" stop-opacity=".22"/><stop offset="1" stop-color="${color}" stop-opacity="0"/></linearGradient></defs>${grid}<path d="${area}" fill="url(#lg)"/><path d="${line}" fill="none" stroke="${color}" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>${dots}${vl}${labs}</svg>`;
+}
+function funnelChart(S){
+  const cnt=[0,0,0,0,0,0,0];S.forEach(r=>{if(r.sg!=null)cnt[r.sg]++;});const max=Math.max(...cnt,1);const tot=cnt.reduce((a,b)=>a+b,0)||1;
+  return`<div class="bars">`+STAGES.map((s,i)=>`<div class="bar-row"><div class="nm">${s}</div><div class="track" style="height:18px"><div class="fill" style="width:${Math.max(2,cnt[i]/max*100)}%;background:linear-gradient(90deg,var(--brand),color-mix(in srgb,var(--brand) 55%,var(--gold)))"></div></div><div class="vv num">${fmt(cnt[i])} <span class="subtle">${(cnt[i]/tot*100).toFixed(0)}%</span></div></div>`).join('')+`</div>`;
+}
+function monthsOf(S){const m={};S.forEach(r=>{if(r.c){const k=monKey(r.c);m[k]=(m[k]||0)+1;}});return m;}
+
+function byMonthCreated(S){return monthsOf(S);}
+function repShare(seg,b,repName){ // rep leads as % of all leads in segment/range (incl unassigned)
+  const all=ROWS.filter(r=>inRange(r,b)&&segMatch(r,seg)).length||1;
+  const mine=ROWS.filter(r=>inRange(r,b)&&segMatch(r,seg)&&r.r===repName).length;
+  return mine/all*100;
+}
+
+// ---- SEGMENT VIEW (Private / All), rep-adjustable ----
+function renderSeg(seg){
+  const b=bounds(STATE.range),cb=compareBounds();
+  const S=workSet(seg,b),m=calc(S),cm=cb?calc(workSet(seg,cb)):null;
+  const isRep=STATE.rep!=='Overall';
+  const el=document.getElementById(seg==='priv'?'v-priv':'v-all');
+  const share=isRep?` · <span class="subtle">${repShare(seg,b,STATE.rep).toFixed(0)}% of ${seg==='priv'?'private':'all'} leads</span>`:'';
+  let kpis=`<div class="kpis">
+    ${kpi(isRep?STATE.rep.split(' ')[0]+"'s Leads":(seg==='priv'?'Private Cruise Leads':'Total Leads'),fmt(m.n),'in range'+delta(m.n,cm&&cm.n)+share,seg==='priv'?'SALES':'','gold')}
+    ${kpi('Won',fmt(m.won),m.lost+' lost · '+m.open+' open'+delta(m.won,cm&&cm.won))}
+    ${kpi('Conversion',m.conv.toFixed(1)+'%','won ÷ closed'+delta(m.conv,cm&&cm.conv))}
+    ${kpi('Revenue',moneyK(m.rev),'closed-won'+delta(m.rev,cm&&cm.rev),'','gold')}
+    ${kpi('Avg Deal',money(m.avgDeal),'per booking'+delta(m.avgDeal,cm&&cm.avgDeal),'','gold')}`;
+  if(seg==='priv')kpis+=kpi('Avg PAX',m.avgPax.toFixed(1),'guests / event'+delta(m.avgPax,cm&&cm.avgPax));
+  kpis+=kpi('Avg Time to Close',m.ttc.toFixed(1)+'d','lead → won');
+  kpis+=`</div>`;
+
+  // per-rep breakdown (only in Overall) OR this rep's stage funnel
+  let right;
+  if(isRep){right=`<div class="card col-5"><h3>${STATE.rep.split(' ')[0]}'s pipeline stages</h3><div class="desc">Where ${STATE.rep.split(' ')[0]}'s ${seg==='priv'?'private cruise ':''}opps sit now</div>${funnelChart(S)}</div>`;}
+  else{
+    const rb=REPS.map(n=>[n.split(' ')[0],ROWS.filter(r=>inRange(r,b)&&segMatch(r,seg)&&r.r===n).length]).sort((a,b)=>b[1]-a[1]);
+    const rbRev=REPS.map(n=>[n.split(' ')[0],ROWS.filter(r=>inRange(r,b)&&segMatch(r,seg)&&r.r===n&&r.st==='w').reduce((a,r)=>a+r.v,0)]).sort((a,b)=>b[1]-a[1]);
+    right=`<div class="card col-5"><h3>Leads by rep</h3><div class="desc">Assigned ${seg==='priv'?'private cruise ':''}leads in range</div>${bars(rb,fmt)}
+      <h3 style="margin-top:16px">Revenue by rep</h3><div class="desc">Closed-won $</div>${bars(rbRev,moneyK,'g2')}</div>`;
+  }
+  let extra='';
+  if(seg==='all')extra=`<div class="card col-12"><h3>Pipeline funnel — stage distribution</h3><div class="desc">${isRep?STATE.rep+"'s":'All'} opportunities in range by current stage</div>${funnelChart(S)}</div>`;
+  el.innerHTML=kpis+`<div class="grid">
+    <div class="card col-7"><h3>Leads by month</h3><div class="desc">${isRep?STATE.rep+"'s ":''}${seg==='priv'?'private cruise ':''}booking demand — seasonality</div>${lineChart(byMonthCreated(S),seg==='priv'?'var(--brand)':'var(--gold)')}</div>
+    ${right}${extra}</div>`;
+}
+
+// ---- REP SCORECARD (sheet-aligned) ----
+function repRow(name,seg,b){
+  const S=ROWS.filter(r=>inRange(r,b)&&segMatch(r,seg)&&r.r===name);
+  const won=S.filter(r=>r.st==='w'),lost=S.filter(r=>r.st==='l'||r.st==='a'),open=S.filter(r=>r.st==='o');
+  const rev=won.reduce((a,r)=>a+r.v,0),pax=S.map(r=>r.p).filter(p=>p>0);
+  return{name,n:S.length,won:won.length,lost:lost.length,open:open.length,rev,
+    conv:(won.length+lost.length)?won.length/(won.length+lost.length)*100:0,
+    avgDeal:won.length?rev/won.length:0,avgPax:pax.length?pax.reduce((a,b)=>a+b,0)/pax.length:0};
+}
+function renderScore(){
+  const b=bounds(STATE.range),seg=STATE.scSeg;
+  const rows=REPS.map(n=>repRow(n,seg,b));
+  const unRow=repRow('__un',seg,b); // placeholder; recompute for unassigned below
+  const un=ROWS.filter(r=>inRange(r,b)&&segMatch(r,seg)&&r.r==='');
+  const unWon=un.filter(r=>r.st==='w');
+  const total=ROWS.filter(r=>inRange(r,b)&&segMatch(r,seg));
+  const totLeads=total.length||1;
+  const cb=compareBounds();
+  const prev=cb?Object.fromEntries(REPS.map(n=>[n,repRow(n,seg,cb)])):null;
+  function row(r,cls){
+    const p=prev&&prev[r.name];
+    return `<tr class="${cls||''}">
+      <td><div class="who"><div class="av" style="background:${avColors[r.name]||'#8895a7'}">${initials(r.name)}</div>${r.name}</div></td>
+      <td class="num">${fmt(r.n)} <span class="subtle">${(r.n/totLeads*100).toFixed(0)}%</span>${p?delta(r.n,p.n):''}</td>
+      <td class="num">${fmt(r.won)}</td><td class="num">${fmt(r.lost)}</td><td class="num">${fmt(r.open)}</td>
+      <td><span class="pill ${r.conv>=40?'good':'mid'}">${r.conv.toFixed(0)}%</span></td>
+      <td class="num">${money(r.avgDeal)}</td><td class="num">${money(r.rev)}</td>
+      ${seg==='priv'?`<td class="num">${r.avgPax.toFixed(1)}</td>`:''}</tr>`;
+  }
+  const tm=calc(total);
+  const totalRow=`<tr class="total"><td>All reps + unassigned</td><td class="num">${fmt(total.length)} <span class="subtle">100%</span></td>
+    <td class="num">${fmt(tm.won)}</td><td class="num">${fmt(tm.lost)}</td><td class="num">${fmt(tm.open)}</td>
+    <td>${tm.conv.toFixed(0)}%</td><td class="num">${money(tm.avgDeal)}</td><td class="num">${money(tm.rev)}</td>${seg==='priv'?`<td class="num">${tm.avgPax.toFixed(1)}</td>`:''}</tr>`;
+  const unData={name:'Unassigned (auto / tickets)',n:un.length,won:unWon.length,lost:un.filter(r=>r.st==='l'||r.st==='a').length,open:un.filter(r=>r.st==='o').length,rev:unWon.reduce((a,r)=>a+r.v,0),conv:0,avgDeal:unWon.length?unWon.reduce((a,r)=>a+r.v,0)/unWon.length:0,avgPax:0};
+  document.getElementById('v-score').innerHTML=`
+   <div class="seg" style="margin-bottom:14px">
+     <button class="${seg==='all'?'on':''}" onclick="setScSeg('all')">All cruise types</button>
+     <button class="${seg==='priv'?'on':''}" onclick="setScSeg('priv')">Private Cruise only</button>
+   </div>
+   <div class="card col-12"><h3>Rep productivity scorecard</h3><div class="desc">Per-rep opportunity metrics ${seg==='priv'?'(Private Cruise)':'(all cruise types)'} for the selected range — the sales side of the June sheet, live. Messaging activity (SMS/email/calls) is in GHL's Agent Report.</div>
+    <div class="scrollx"><table><thead><tr><th>Rep</th><th>Leads</th><th>Won</th><th>Lost</th><th>Open</th><th>Conv.</th><th>Avg Deal</th><th>Revenue</th>${seg==='priv'?'<th>Avg PAX</th>':''}</tr></thead>
+    <tbody>
+    ${rows.sort((a,b)=>b.rev-a.rev).map(r=>row(r,STATE.rep===r.name?'sel':'')).join('')}
+    ${row(unData,'')}
+    ${totalRow}
+    </tbody></table></div>
+    <div class="note info" style="margin-top:14px"><span class="i">ℹ</span><div><b>Reading it:</b> "Leads %" is each rep's share of all ${seg==='priv'?'private cruise ':''}leads. <b>Unassigned</b> is mostly Public Party ticket sales that auto-complete as Won — that's why its conversion looks near-100% and why per-rep conversion is the truer productivity signal. Tie leads to reps in GHL to shrink the Unassigned row.</div></div>
+   </div>`;
+}
+window.setScSeg=function(s){STATE.scSeg=s;renderScore();};
+
+function render(){
+  const b=bounds(STATE.range),cb=compareBounds();
+  document.getElementById('rangelabel').textContent=rangeLabels[STATE.range];
+  document.getElementById('rangedates').textContent=(b[0]?dstr(b[0]):'start')+' → '+dstr(b[1])+(cb?`  ⟺  vs ${dstr(cb[0])} → ${dstr(cb[1])}`:'');
+  document.getElementById('repname').textContent=STATE.rep;
+  renderSeg('priv');renderSeg('all');renderScore();
+  const tot=calc(ROWS.filter(r=>inRange(r,b)));
+  document.getElementById('footnote').innerHTML=`Live from GoHighLevel · Pontoon Saloon · Sales Pipeline · ${fmt(ROWS.length)} opportunities · reconciled to GHL Agent Report (Bonnie June 22/8/14 ✓). Data through ${CX.data_through}. Messaging activity → GHL Agent Report.`;
+}
+function show(v){STATE.view=v;document.querySelectorAll('.view').forEach(e=>e.classList.remove('show'));document.getElementById('v-'+v).classList.add('show');
+  document.querySelectorAll('#nav a').forEach(a=>a.classList.toggle('active',a.dataset.view===v));
+  document.querySelectorAll('#seg>button').forEach(x=>x.classList.toggle('on',x.dataset.view===v));
+  document.getElementById('viewname').textContent={priv:'Private Cruise',all:'All Leads',score:'Rep Scorecard'}[v];}
+// build rep selector
+const rsel=document.getElementById('rep');rsel.innerHTML=`<option>Overall</option>`+REPS.map(n=>`<option>${n}</option>`).join('');
+document.querySelectorAll('#nav a,#seg>button').forEach(el=>el.addEventListener('click',()=>show(el.dataset.view)));
+rsel.addEventListener('change',e=>{STATE.rep=e.target.value;render();});
+document.getElementById('range').addEventListener('change',e=>{STATE.range=e.target.value;render();});
+document.getElementById('compare').addEventListener('change',e=>{STATE.compare=e.target.value;render();});
+document.getElementById('themeBtn').addEventListener('click',()=>{const c=document.documentElement.getAttribute('data-theme');document.documentElement.setAttribute('data-theme',c==='dark'?'light':c==='light'?'dark':(matchMedia('(prefers-color-scheme:dark)').matches?'light':'dark'));});
+render();show('priv');
+</script>
