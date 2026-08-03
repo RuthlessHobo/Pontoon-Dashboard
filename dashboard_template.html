@@ -401,17 +401,17 @@ function renderScore(){
           const pc=tot?((v/tot)*100).toFixed(1)+'%':'';
           return `<td class="num"${sel}>${fmtv(v)}</td><td class="num subtle"${sel}>${pc}</td>`;}).join('')+`</tr>`;
     };
-    const B=STATE.actBucket;            // 'm' = manual (Agent Report), 'a' = automated
-    body+=sec('SMS — '+(B==='m'?'manual sends (matches GHL Agent Report)':'automated / campaign sends'));
+    const B='m';   // manual sends only — the Agent Report's definition
+    body+=sec('SMS — manual sends (matches GHL Agent Report)');
     body+=arow('Sent',x=>x[B].sms,fmt);
     body+=arow('Delivered',x=>x[B].sms_del,fmt);
     body+=arow('Failed',x=>x[B].sms_fail,fmt);
     body+=`<tr><td>Delivery rate</td><td class="num tot">${(()=>{const s=REPS.reduce((a,_,i)=>a+A[i][B].sms,0),d=REPS.reduce((a,_,i)=>a+A[i][B].sms_del,0);return s?(d/s*100).toFixed(1)+'%':'–';})()}</td>`+
       REPS.map((n,i)=>{const s=A[i][B].sms,d=A[i][B].sms_del;const sel=STATE.rep===n?' style="background:color-mix(in srgb,var(--gold) 10%,transparent)"':'';
         return `<td class="num"${sel}>${s?(d/s*100).toFixed(1)+'%':'–'}</td><td${sel}></td>`;}).join('')+`</tr>`;
-    body+=sec('Email — '+(B==='m'?'manual sends':'automated sends'));
+    body+=sec('Email — manual sends');
     body+=arow('Sent',x=>x[B].email,fmt);
-    body+=sec('Calls — '+(B==='m'?'manual (dialled by the rep)':'automated / dialler'));
+    body+=sec('Calls — manual (dialled by the rep)');
     body+=arow('Total calls',x=>x[B].call,fmt);
     body+=arow('Answered',x=>x[B].call_ans,fmt);
     body+=arow('Talk time',x=>x[B].call_secs,hhmm);
@@ -427,10 +427,7 @@ function renderScore(){
    <div class="card col-12"><h3>Head-to-head — rep vs rep</h3>
     <div class="desc">Every rep side by side for the selected range${cb?' · ▲▼ = change vs the comparison period':''}. The % column is each rep's share of the four-rep total. GHL's Agent Report shows one rep at a time — this is the side-by-side view.</div>
     <div class="scrollx"><table class="h2h"><thead>${head}</thead><tbody>${body}</tbody></table></div>
-    ${hasAct?`<div style="margin-top:12px;display:flex;gap:10px;align-items:center;flex-wrap:wrap">
-       <span class="ctl-lab" style="margin:0">Message source</span>
-       <div class="seg" style="margin:0"><button class="${STATE.actBucket==='m'?'on':''}" onclick="setBucket('m')">Manual (Agent Report)</button><button class="${STATE.actBucket==='a'?'on':''}" onclick="setBucket('a')">Automated / campaign</button></div>
-       <span class="subtle">Activity data covers ${ACT.window.start} → ${ACT.window.end}${ACT.complete?'':' · still building'}</span></div>`:'<div class="note" style="margin-top:14px"><span class="i">◆</span><div><b>Calls / SMS / Emails are being wired in.</b> They will appear as rows in this same side-by-side table, counted the same way GHL\'s Agent Report counts them (manual sends only, excluding campaign blasts).</div></div>'}
+    ${hasAct?`<div class="note info" style="margin-top:14px"><span class="i">ℹ</span><div>Messaging counts are <b>manual sends only</b> — messages a rep personally typed and sent — which is exactly how GHL's Agent Report counts them (it excludes automated and campaign sends). Covers ${ACT.window.start} → ${ACT.window.end}.</div></div>`:'<div class="note" style="margin-top:14px"><span class="i">◆</span><div><b>Calls / SMS / Emails are being wired in.</b> They will appear as rows in this same side-by-side table, counted the same way GHL\'s Agent Report counts them (manual sends only, excluding campaign blasts).</div></div>'}
    </div>
    <div class="card col-12" style="margin-top:15px">
     <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px;margin-bottom:6px">

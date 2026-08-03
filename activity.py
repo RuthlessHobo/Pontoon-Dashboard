@@ -50,7 +50,15 @@ def users_map():
 
 
 def collect_convs():
-    ids, after, pages = [], None, 0
+    """Only conversations containing a MANUAL (rep-typed) message inside the window.
+
+    GHL exposes lastManualMessageDate per conversation. If a conversation's most
+    recent manual message predates the window, it has no manual messages in the
+    window, so it cannot contribute to Agent-Report-style counts and we skip
+    fetching its messages. This is what makes the crawl finish in minutes rather
+    than hours on a high-volume SMS account.
+    """
+    ids, after, pages, scanned = [], None, 0, 0
     while True:
         q = {"locationId": LOC, "limit": "100", "sortBy": "last_message_date", "sort": "desc"}
         if after:
@@ -61,16 +69,26 @@ def collect_convs():
             break
         stop = False
         for c in cs:
+            scanned += 1
             if (c.get("lastMessageDate") or 0) < CUTOFF_MS:
                 stop = True
                 break
-            ids.append(c["id"])
+            lmm = c.get("lastManualMessageDate") or 0
+            if isinstance(lmm, str):
+                try:
+                    lmm = int(datetime.fromisoformat(lmm.replace("Z", "+00:00")).timestamp() * 1000)
+                except ValueError:
+                    lmm = 0
+            if lmm >= CUTOFF_MS:
+                ids.append(c["id"])
         pages += 1
         after = cs[-1].get("lastMessageDate")
-        if pages % 20 == 0:
-            print(f"  [collect] {len(ids)} convs", file=sys.stderr)
+        if pages % 25 == 0:
+            print(f"  [collect] scanned {scanned}, {len(ids)} with manual activity", file=sys.stderr)
         if stop or not after or pages > 800:
             break
+    print(f"  [collect] scanned {scanned} conversations -> {len(ids)} contain manual rep messages",
+          file=sys.stderr)
     return ids
 
 
@@ -89,6 +107,8 @@ def classify(m):
         return None
     src = (m.get("source") or "").lower()
     bucket = "m" if src in ("app", "") else "a"      # workflow/campaign/api -> automated
+    if bucket == "a":
+        return None      # automation-only traffic is out of scope; see collect_convs()
     st = (m.get("status") or "").lower()
     delivered = st in ("delivered", "sent", "opened", "clicked")
     failed = st in ("failed", "undelivered", "rejected", "error")
