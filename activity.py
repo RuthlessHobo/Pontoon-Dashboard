@@ -74,15 +74,32 @@ def collect_convs():
     return ids
 
 
-def cat(mt):
-    mt = (mt or "").upper()
-    if "CALL" in mt:
-        return "call"
+def classify(m):
+    """-> (bucket, kind, delivered, failed, answered, secs) or None if not countable.
+    bucket: 'm' = manual (sent from the app by a person), 'a' = automated (workflow/campaign).
+    GHL's Agent Report counts MANUAL sends only, which is the 'm' bucket."""
+    mt = (m.get("messageType") or "").upper()
     if mt == "TYPE_SMS":
-        return "sms"
-    if mt == "TYPE_EMAIL":
-        return "email"
-    return "other"
+        kind = "sms"
+    elif mt == "TYPE_EMAIL":
+        kind = "email"
+    elif "CALL" in mt:
+        kind = "call"
+    else:
+        return None
+    src = (m.get("source") or "").lower()
+    bucket = "m" if src in ("app", "") else "a"      # workflow/campaign/api -> automated
+    st = (m.get("status") or "").lower()
+    delivered = st in ("delivered", "sent", "opened", "clicked")
+    failed = st in ("failed", "undelivered", "rejected", "error")
+    call = (m.get("meta") or {}).get("call") or {}
+    answered = kind == "call" and (call.get("status") or "").lower() == "completed"
+    secs = call.get("duration") or 0
+    try:
+        secs = int(secs)
+    except (TypeError, ValueError):
+        secs = 0
+    return bucket, kind, delivered, failed, answered, secs
 
 
 def conv_msgs(cid):
@@ -107,7 +124,9 @@ def conv_msgs(cid):
                 older_in = False
                 continue
             if m.get("direction") == "outbound" and m.get("userId"):
-                out.append((m["userId"], dt.strftime("%Y-%m-%d"), cat(m.get("messageType"))))
+                c = classify(m)
+                if c:
+                    out.append((m["userId"], dt.strftime("%Y-%m-%d")) + c)
         if len(msgs) < 100 or not older_in:
             break
         last, hops = msgs[-1].get("id"), hops + 1
@@ -115,21 +134,41 @@ def conv_msgs(cid):
 
 
 def blank():
-    return {"call": 0, "sms": 0, "email": 0, "other": 0}
+    return {"sms": 0, "sms_del": 0, "sms_fail": 0, "email": 0,
+            "call": 0, "call_ans": 0, "call_secs": 0}
+
+
+def two_buckets():
+    return {"m": blank(), "a": blank()}
+
+
+def add(dst, kind, delivered, failed, answered, secs):
+    if kind == "sms":
+        dst["sms"] += 1
+        if delivered: dst["sms_del"] += 1
+        if failed:    dst["sms_fail"] += 1
+    elif kind == "email":
+        dst["email"] += 1
+    elif kind == "call":
+        dst["call"] += 1
+        if answered: dst["call_ans"] += 1
+        dst["call_secs"] += secs
 
 
 def aggregate(events, users):
     by_rep = {}
-    for uid, day, c in events:
-        r = by_rep.setdefault(uid, {"name": users.get(uid, uid), "totals": blank(), "by_day": {}})
-        r["totals"][c] += 1
-        r["by_day"].setdefault(day, blank())[c] += 1
+    for uid, day, bucket, kind, delivered, failed, answered, secs in events:
+        r = by_rep.setdefault(uid, {"name": users.get(uid, uid),
+                                    "totals": two_buckets(), "by_day": {}})
+        add(r["totals"][bucket], kind, delivered, failed, answered, secs)
+        d = r["by_day"].setdefault(day, two_buckets())
+        add(d[bucket], kind, delivered, failed, answered, secs)
     return by_rep
 
 
 def save(by_rep, n, complete):
     json.dump({"window": {"start": START, "end": END}, "conversations_processed": n,
-               "complete": complete, "by_rep": by_rep},
+               "complete": complete, "schema": 2, "by_rep": by_rep},
               open(os.path.join(HERE, "activity.json"), "w"), indent=1)
 
 
@@ -163,11 +202,14 @@ def main():
         rep = next((r for r in by_rep.values() if r["name"] == name), None)
         if not rep:
             print(f"  {name:22s} no activity", file=sys.stderr); continue
-        c = s_ = e = 0
+        m = blank(); a = blank()
         for day, v in rep["by_day"].items():
             if day.startswith("2026-06"):
-                c += v["call"]; s_ += v["sms"]; e += v["email"]
-        print(f"  {name:22s} JUNE calls={c} sms={s_} email={e}", file=sys.stderr)
+                for k in m:
+                    m[k] += v["m"][k]; a[k] += v["a"][k]
+        print(f"  {name:22s} JUNE manual: sms={m['sms']} (del={m['sms_del']} fail={m['sms_fail']}) "
+              f"email={m['email']} calls={m['call']} (ans={m['call_ans']} {m['call_secs']//60}min)"
+              f"  |  automated: sms={a['sms']} email={a['email']}", file=sys.stderr)
 
 
 if __name__ == "__main__":

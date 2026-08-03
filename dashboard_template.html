@@ -124,7 +124,7 @@ svg{display:block;width:100%;overflow:visible}
     </nav>
     <div class="foot">
       <div class="live"><span class="dot"></span> Auto-refresh: hourly</div>
-      <div style="margin-top:7px">Sales analytics GHL can't do. Messaging activity (SMS/email/calls) lives in GHL's Agent Report.</div>
+      <div style="margin-top:7px">Sales analytics plus rep messaging — every rep side by side, which the Agent Report can't show.</div>
     </div>
   </aside>
   <main class="main">
@@ -185,7 +185,7 @@ const dstr=ms=>{const d=new Date(ms);return mLbl[d.getUTCMonth()]+' '+d.getUTCDa
 const initials=n=>n.split(' ').map(w=>w[0]).slice(0,2).join('');
 const STAGES=['New Lead','Attempted Call','Follow Up','Appt Booked','Proposal Sent','Proposal Signed (Won)','Work Complete'];
 
-let STATE={range:'all',compare:'none',rep:'Overall',view:'priv',scSeg:'all',trend:'n'};
+let STATE={range:'all',compare:'none',rep:'Overall',view:'priv',scSeg:'all',trend:'n',actBucket:'m'};
 function bounds(key){
   const nd=new Date(NOW);
   if(key==='all')return[0,NOW];
@@ -303,15 +303,20 @@ function statsFor(name,seg,b){
 }
 function actFor(name,b){
   if(!ACT||!ACT.by_rep)return null;
-  const out={call:0,sms:0,email:0};
+  const z=()=>({sms:0,sms_del:0,sms_fail:0,email:0,call:0,call_ans:0,call_secs:0});
+  const out={m:z(),a:z()};
   const rep=Object.values(ACT.by_rep).find(r=>r.name===name);
   if(!rep)return out;
   for(const[day,v] of Object.entries(rep.by_day)){
     const t=Date.parse(day+'T12:00:00Z');
-    if(t>=b[0]&&t<=b[1]){out.call+=v.call;out.sms+=v.sms;out.email+=v.email;}
+    if(t<b[0]||t>b[1])continue;
+    for(const bk of ['m','a']){ if(!v[bk])continue;
+      for(const k in out[bk]) out[bk][k]+=(v[bk][k]||0); }
   }
   return out;
 }
+const hhmm=s=>{const h=Math.floor(s/3600),m=Math.round((s%3600)/60);return h?`${h}h ${m}m`:`${m}m`;};
+
 // value of a metric for one rep in a window (used by the trend chart)
 function metricVal(name,seg,b,metric){
   const s=statsFor(name,seg,b);
@@ -388,11 +393,28 @@ function renderScore(){
     body+=row(st,s=>s.stages[si],fmt,true,null,fmt(tot));
   });
   if(hasAct){
-    body+=sec('Outreach activity — manual sends (matches GHL Agent Report definition)');
-    const at=k=>A.reduce((a,x)=>a+x[k],0);
-    body+=`<tr><td>Calls</td><td class="num tot">${fmt(at('call'))}</td>${REPS.map((n,i)=>{const t=at('call');const sel=STATE.rep===n?' style="background:color-mix(in srgb,var(--gold) 10%,transparent)"':'';return `<td class="num"${sel}>${fmt(A[i].call)}</td><td class="num subtle"${sel}>${t?((A[i].call/t)*100).toFixed(1)+'%':''}</td>`;}).join('')}</tr>`;
-    body+=`<tr><td>SMS</td><td class="num tot">${fmt(at('sms'))}</td>${REPS.map((n,i)=>{const t=at('sms');const sel=STATE.rep===n?' style="background:color-mix(in srgb,var(--gold) 10%,transparent)"':'';return `<td class="num"${sel}>${fmt(A[i].sms)}</td><td class="num subtle"${sel}>${t?((A[i].sms/t)*100).toFixed(1)+'%':''}</td>`;}).join('')}</tr>`;
-    body+=`<tr><td>Emails</td><td class="num tot">${fmt(at('email'))}</td>${REPS.map((n,i)=>{const t=at('email');const sel=STATE.rep===n?' style="background:color-mix(in srgb,var(--gold) 10%,transparent)"':'';return `<td class="num"${sel}>${fmt(A[i].email)}</td><td class="num subtle"${sel}>${t?((A[i].email/t)*100).toFixed(1)+'%':''}</td>`;}).join('')}</tr>`;
+    const arow=(label,get,fmtv)=>{
+      const tot=REPS.reduce((acc,_,i)=>acc+get(A[i]),0);
+      return `<tr><td>${label}</td><td class="num tot">${fmtv(tot)}</td>`+
+        REPS.map((n,i)=>{const v=get(A[i]);
+          const sel=STATE.rep===n?' style="background:color-mix(in srgb,var(--gold) 10%,transparent)"':'';
+          const pc=tot?((v/tot)*100).toFixed(1)+'%':'';
+          return `<td class="num"${sel}>${fmtv(v)}</td><td class="num subtle"${sel}>${pc}</td>`;}).join('')+`</tr>`;
+    };
+    const B=STATE.actBucket;            // 'm' = manual (Agent Report), 'a' = automated
+    body+=sec('SMS — '+(B==='m'?'manual sends (matches GHL Agent Report)':'automated / campaign sends'));
+    body+=arow('Sent',x=>x[B].sms,fmt);
+    body+=arow('Delivered',x=>x[B].sms_del,fmt);
+    body+=arow('Failed',x=>x[B].sms_fail,fmt);
+    body+=`<tr><td>Delivery rate</td><td class="num tot">${(()=>{const s=REPS.reduce((a,_,i)=>a+A[i][B].sms,0),d=REPS.reduce((a,_,i)=>a+A[i][B].sms_del,0);return s?(d/s*100).toFixed(1)+'%':'–';})()}</td>`+
+      REPS.map((n,i)=>{const s=A[i][B].sms,d=A[i][B].sms_del;const sel=STATE.rep===n?' style="background:color-mix(in srgb,var(--gold) 10%,transparent)"':'';
+        return `<td class="num"${sel}>${s?(d/s*100).toFixed(1)+'%':'–'}</td><td${sel}></td>`;}).join('')+`</tr>`;
+    body+=sec('Email — '+(B==='m'?'manual sends':'automated sends'));
+    body+=arow('Sent',x=>x[B].email,fmt);
+    body+=sec('Calls — '+(B==='m'?'manual (dialled by the rep)':'automated / dialler'));
+    body+=arow('Total calls',x=>x[B].call,fmt);
+    body+=arow('Answered',x=>x[B].call_ans,fmt);
+    body+=arow('Talk time',x=>x[B].call_secs,hhmm);
   }
 
   const head=`<tr><th style="min-width:180px">Metric</th><th class="num">Total</th>${REPS.map(n=>`<th class="num" colspan="2"><span style="display:inline-flex;align-items:center;gap:6px"><span class="spark" style="background:${avColors[n]}"></span>${n.split(' ')[0]}</span></th>`).join('')}</tr>`;
@@ -405,7 +427,10 @@ function renderScore(){
    <div class="card col-12"><h3>Head-to-head — rep vs rep</h3>
     <div class="desc">Every rep side by side for the selected range${cb?' · ▲▼ = change vs the comparison period':''}. The % column is each rep's share of the four-rep total. GHL's Agent Report shows one rep at a time — this is the side-by-side view.</div>
     <div class="scrollx"><table class="h2h"><thead>${head}</thead><tbody>${body}</tbody></table></div>
-    ${hasAct?'':'<div class="note" style="margin-top:14px"><span class="i">◆</span><div><b>Calls / SMS / Emails are being wired in.</b> They will appear as rows in this same side-by-side table, counted the same way GHL\'s Agent Report counts them (manual sends only, excluding campaign blasts).</div></div>'}
+    ${hasAct?`<div style="margin-top:12px;display:flex;gap:10px;align-items:center;flex-wrap:wrap">
+       <span class="ctl-lab" style="margin:0">Message source</span>
+       <div class="seg" style="margin:0"><button class="${STATE.actBucket==='m'?'on':''}" onclick="setBucket('m')">Manual (Agent Report)</button><button class="${STATE.actBucket==='a'?'on':''}" onclick="setBucket('a')">Automated / campaign</button></div>
+       <span class="subtle">Activity data covers ${ACT.window.start} → ${ACT.window.end}${ACT.complete?'':' · still building'}</span></div>`:'<div class="note" style="margin-top:14px"><span class="i">◆</span><div><b>Calls / SMS / Emails are being wired in.</b> They will appear as rows in this same side-by-side table, counted the same way GHL\'s Agent Report counts them (manual sends only, excluding campaign blasts).</div></div>'}
    </div>
    <div class="card col-12" style="margin-top:15px">
     <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px;margin-bottom:6px">
@@ -419,6 +444,7 @@ function renderScore(){
   if(tm)tm.addEventListener('change',e=>{STATE.trend=e.target.value;renderScore();});
 }
 window.setScSeg=function(s){STATE.scSeg=s;renderScore();};
+window.setBucket=function(bk){STATE.actBucket=bk;renderScore();};
 
 function render(){
   const b=bounds(STATE.range),cb=compareBounds();
@@ -427,7 +453,7 @@ function render(){
   document.getElementById('repname').textContent=STATE.rep;
   renderSeg('priv');renderSeg('all');renderScore();
   const tot=calc(ROWS.filter(r=>inRange(r,b)));
-  document.getElementById('footnote').innerHTML=`Live from GoHighLevel · Pontoon Saloon · Sales Pipeline · ${fmt(ROWS.length)} opportunities · reconciled to GHL Agent Report (Bonnie June 22/8/14 ✓). Data through ${CX.data_through}. Messaging activity → GHL Agent Report.`;
+  document.getElementById('footnote').innerHTML=`Live from GoHighLevel · Pontoon Saloon · Sales Pipeline · ${fmt(ROWS.length)} opportunities · reconciled to GHL Agent Report (Bonnie June 22/8/14 ✓). Data through ${CX.data_through}.`;
 }
 function show(v){STATE.view=v;document.querySelectorAll('.view').forEach(e=>e.classList.remove('show'));document.getElementById('v-'+v).classList.add('show');
   document.querySelectorAll('#nav a').forEach(a=>a.classList.toggle('active',a.dataset.view===v));
