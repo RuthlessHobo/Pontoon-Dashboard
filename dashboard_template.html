@@ -97,6 +97,13 @@ tbody tr:hover{background:color-mix(in srgb,var(--brand) 6%,transparent)}
 .pill{display:inline-block;font-size:11.5px;font-weight:700;padding:2px 9px;border-radius:20px}
 .pill.good{background:var(--brand-soft);color:var(--brand)}.pill.mid{background:var(--gold-soft);color:var(--gold)}
 .subtle{color:var(--faint);font-size:11px}
+.legend{display:flex;gap:18px;flex-wrap:wrap;font-size:12px;color:var(--muted);margin-top:10px}
+.legend i{width:10px;height:10px;border-radius:3px;display:inline-block;margin-right:6px;vertical-align:-1px}
+table.h2h td:first-child{font-weight:600;color:var(--ink)}
+table.h2h td.tot{font-weight:750;background:color-mix(in srgb,var(--brand) 6%,transparent)}
+table.h2h tr.sec td{background:var(--navy);color:#fff;font-size:11px;text-transform:uppercase;letter-spacing:.6px;font-weight:700;padding:7px 10px;text-align:left}
+table.h2h tr.sec:hover td{background:var(--navy)}
+table.h2h th{border-bottom:2px solid var(--line)}
 .note{background:color-mix(in srgb,var(--warn) 9%,var(--card));border:1px solid color-mix(in srgb,var(--warn) 30%,var(--line));border-radius:11px;padding:12px 14px;font-size:12.5px;color:var(--ink);display:flex;gap:11px;line-height:1.5}
 .note.info{background:color-mix(in srgb,var(--blue) 9%,var(--card));border-color:color-mix(in srgb,var(--blue) 30%,var(--line))}
 .note .i{color:var(--warn);font-size:15px;flex:none}.note.info .i{color:var(--blue)}
@@ -162,6 +169,7 @@ svg{display:block;width:100%;overflow:visible}
 
 <script>
 const CX = __COMPACT__;
+const ACT = __ACTIVITY__;
 const ROWS = CX.rows;
 const REPS = CX.reps;
 const NOW = Date.parse(CX.data_through+"T23:59:59Z");
@@ -177,7 +185,7 @@ const dstr=ms=>{const d=new Date(ms);return mLbl[d.getUTCMonth()]+' '+d.getUTCDa
 const initials=n=>n.split(' ').map(w=>w[0]).slice(0,2).join('');
 const STAGES=['New Lead','Attempted Call','Follow Up','Appt Booked','Proposal Sent','Proposal Signed (Won)','Work Complete'];
 
-let STATE={range:'all',compare:'none',rep:'Overall',view:'priv',scSeg:'all'};
+let STATE={range:'all',compare:'none',rep:'Overall',view:'priv',scSeg:'all',trend:'n'};
 function bounds(key){
   const nd=new Date(NOW);
   if(key==='all')return[0,NOW];
@@ -282,45 +290,133 @@ function repRow(name,seg,b){
     conv:(won.length+lost.length)?won.length/(won.length+lost.length)*100:0,
     avgDeal:won.length?rev/won.length:0,avgPax:pax.length?pax.reduce((a,b)=>a+b,0)/pax.length:0};
 }
-function renderScore(){
-  const b=bounds(STATE.range),seg=STATE.scSeg;
-  const rows=REPS.map(n=>repRow(n,seg,b));
-  const unRow=repRow('__un',seg,b); // placeholder; recompute for unassigned below
-  const un=ROWS.filter(r=>inRange(r,b)&&segMatch(r,seg)&&r.r==='');
-  const unWon=un.filter(r=>r.st==='w');
-  const total=ROWS.filter(r=>inRange(r,b)&&segMatch(r,seg));
-  const totLeads=total.length||1;
-  const cb=compareBounds();
-  const prev=cb?Object.fromEntries(REPS.map(n=>[n,repRow(n,seg,cb)])):null;
-  function row(r,cls){
-    const p=prev&&prev[r.name];
-    return `<tr class="${cls||''}">
-      <td><div class="who"><div class="av" style="background:${avColors[r.name]||'#8895a7'}">${initials(r.name)}</div>${r.name}</div></td>
-      <td class="num">${fmt(r.n)} <span class="subtle">${(r.n/totLeads*100).toFixed(0)}%</span>${p?delta(r.n,p.n):''}</td>
-      <td class="num">${fmt(r.won)}</td><td class="num">${fmt(r.lost)}</td><td class="num">${fmt(r.open)}</td>
-      <td><span class="pill ${r.conv>=40?'good':'mid'}">${r.conv.toFixed(0)}%</span></td>
-      <td class="num">${money(r.avgDeal)}</td><td class="num">${money(r.rev)}</td>
-      ${seg==='priv'?`<td class="num">${r.avgPax.toFixed(1)}</td>`:''}</tr>`;
+function statsFor(name,seg,b){
+  const S=ROWS.filter(r=>inRange(r,b)&&segMatch(r,seg)&&r.r===name);
+  const won=S.filter(r=>r.st==='w'),lost=S.filter(r=>r.st==='l'||r.st==='a'),open=S.filter(r=>r.st==='o');
+  const rev=won.reduce((a,r)=>a+r.v,0);
+  const pax=S.map(r=>r.p).filter(p=>p>0);
+  const stages=[0,0,0,0,0,0,0];S.forEach(r=>{if(r.sg!=null)stages[r.sg]++;});
+  return {n:S.length,won:won.length,lost:lost.length,open:open.length,rev,
+    conv:(won.length+lost.length)?won.length/(won.length+lost.length)*100:0,
+    avgDeal:won.length?rev/won.length:0,
+    avgPax:pax.length?pax.reduce((a,b)=>a+b,0)/pax.length:0, stages};
+}
+function actFor(name,b){
+  if(!ACT||!ACT.by_rep)return null;
+  const out={call:0,sms:0,email:0};
+  const rep=Object.values(ACT.by_rep).find(r=>r.name===name);
+  if(!rep)return out;
+  for(const[day,v] of Object.entries(rep.by_day)){
+    const t=Date.parse(day+'T12:00:00Z');
+    if(t>=b[0]&&t<=b[1]){out.call+=v.call;out.sms+=v.sms;out.email+=v.email;}
   }
-  const tm=calc(total);
-  const totalRow=`<tr class="total"><td>All reps + unassigned</td><td class="num">${fmt(total.length)} <span class="subtle">100%</span></td>
-    <td class="num">${fmt(tm.won)}</td><td class="num">${fmt(tm.lost)}</td><td class="num">${fmt(tm.open)}</td>
-    <td>${tm.conv.toFixed(0)}%</td><td class="num">${money(tm.avgDeal)}</td><td class="num">${money(tm.rev)}</td>${seg==='priv'?`<td class="num">${tm.avgPax.toFixed(1)}</td>`:''}</tr>`;
-  const unData={name:'Unassigned (auto / tickets)',n:un.length,won:unWon.length,lost:un.filter(r=>r.st==='l'||r.st==='a').length,open:un.filter(r=>r.st==='o').length,rev:unWon.reduce((a,r)=>a+r.v,0),conv:0,avgDeal:unWon.length?unWon.reduce((a,r)=>a+r.v,0)/unWon.length:0,avgPax:0};
+  return out;
+}
+// value of a metric for one rep in a window (used by the trend chart)
+function metricVal(name,seg,b,metric){
+  const s=statsFor(name,seg,b);
+  if(metric==='n')return s.n; if(metric==='won')return s.won;
+  if(metric==='rev')return s.rev; if(metric==='conv')return s.conv;
+  return 0;
+}
+const TREND_LABEL={n:'Leads',won:'Won',rev:'Revenue',conv:'Conversion %'};
+function trendChart(metric,seg){
+  const months=[...new Set(ROWS.filter(r=>r.c&&segMatch(r,seg)).map(r=>monKey(r.c)))].sort();
+  if(months.length<2)return '<div class="empty">Not enough history yet for a month-over-month trend.</div>';
+  const series=REPS.map(n=>({name:n,color:avColors[n],vals:months.map(mk=>{
+    const [y,m]=mk.split('-').map(Number);
+    const s=Date.UTC(y,m-1,1), e=Date.UTC(y,m,1)-1;
+    return metricVal(n,seg,[s,e],metric);
+  })}));
+  const W=880,H=250,padL=52,padR=14,padT=16,padB=30;
+  const max=Math.max(1,...series.flatMap(s=>s.vals))*1.12;
+  const x=i=>padL+i*(W-padL-padR)/(months.length-1||1);
+  const y=v=>H-padB-(v/max)*(H-padT-padB);
+  let grid='',ax='';
+  for(let g=0;g<=3;g++){const val=max*g/3, gy=y(val);
+    grid+=`<line x1="${padL}" y1="${gy.toFixed(1)}" x2="${W-padR}" y2="${gy.toFixed(1)}" stroke="var(--chart-grid)"/>`;
+    ax+=`<text x="${padL-8}" y="${(gy+3.5).toFixed(1)}" font-size="10" fill="var(--muted)" text-anchor="end">${metric==='rev'?moneyK(val):metric==='conv'?val.toFixed(0)+'%':Math.round(val)}</text>`;}
+  const lines=series.map(s=>{
+    const d=s.vals.map((v,i)=>(i?'L':'M')+x(i).toFixed(1)+' '+y(v).toFixed(1)).join(' ');
+    const dots=s.vals.map((v,i)=>`<circle cx="${x(i).toFixed(1)}" cy="${y(v).toFixed(1)}" r="3.2" fill="${s.color}"><title>${s.name} · ${monShort(months[i])} · ${metric==='rev'?money(v):metric==='conv'?v.toFixed(1)+'%':v}</title></circle>`).join('');
+    return `<path d="${d}" fill="none" stroke="${s.color}" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" opacity="${STATE.rep==='Overall'||STATE.rep===s.name?1:.22}"/>${dots}`;
+  }).join('');
+  const xl=months.map((mk,i)=>`<text x="${x(i).toFixed(1)}" y="${H-8}" font-size="10" fill="var(--muted)" text-anchor="middle">${monShort(mk)}</text>`).join('');
+  const legend=series.map(s=>`<span style="opacity:${STATE.rep==='Overall'||STATE.rep===s.name?1:.4}"><i style="background:${s.color}"></i>${s.name.split(' ')[0]}</span>`).join('');
+  return `<div class="scrollx"><svg viewBox="0 0 ${W} ${H}" style="min-width:${W}px" role="img">${grid}${ax}${lines}${xl}</svg></div><div class="legend">${legend}</div>`;
+}
+
+function renderScore(){
+  const b=bounds(STATE.range),seg=STATE.scSeg,cb=compareBounds();
+  const S=REPS.map(n=>statsFor(n,seg,b));
+  const A=REPS.map(n=>actFor(n,b));
+  const P=cb?REPS.map(n=>statsFor(n,seg,cb)):null;
+  const hasAct=A[0]!==null;
+  const sum=k=>S.reduce((a,s)=>a+s[k],0);
+  const totLeads=sum('n'),totWon=sum('won'),totLost=sum('lost'),totRev=sum('rev');
+  const totConv=(totWon+totLost)?totWon/(totWon+totLost)*100:0;
+
+  function cells(get,fmtv,share,prevGet){
+    return REPS.map((n,i)=>{
+      const v=get(S[i],i), sel=STATE.rep===n?' style="background:color-mix(in srgb,var(--gold) 10%,transparent)"':'';
+      const tot=share?REPS.reduce((a,_,j)=>a+get(S[j],j),0):0;
+      const pc=share&&tot?((v/tot)*100).toFixed(1)+'%':'';
+      let d='';
+      if(P&&prevGet){const pv=prevGet(P[i],i); if(pv>0){const ch=(v-pv)/pv*100; d=` <span style="font-size:10.5px;color:${ch>=0?'var(--good)':'var(--bad)'}">${ch>=0?'▲':'▼'}${Math.abs(ch).toFixed(0)}%</span>`;}}
+      return `<td class="num"${sel}>${fmtv(v)}${d}</td><td class="num subtle"${sel}>${pc}</td>`;
+    }).join('');
+  }
+  function row(label,get,fmtv,share,prevGet,tot){
+    return `<tr><td>${label}</td><td class="num tot">${tot}</td>${cells(get,fmtv,share,prevGet)}</tr>`;
+  }
+  const sec=t=>`<tr class="sec"><td colspan="${2+REPS.length*2}">${t}</td></tr>`;
+
+  let body='';
+  body+=sec('Opportunities');
+  body+=row('Total Leads',s=>s.n,fmt,true,s=>s.n,fmt(totLeads));
+  body+=row('Open',s=>s.open,fmt,true,null,fmt(sum('open')));
+  body+=row('Won',s=>s.won,fmt,true,s=>s.won,fmt(totWon));
+  body+=row('Lost',s=>s.lost,fmt,true,null,fmt(totLost));
+  body+=sec('Performance');
+  body+=row('Conversion rate',s=>s.conv,v=>v.toFixed(1)+'%',false,s=>s.conv,totConv.toFixed(1)+'%');
+  body+=row('Revenue (won)',s=>s.rev,moneyK,true,s=>s.rev,moneyK(totRev));
+  body+=row('Avg deal size',s=>s.avgDeal,v=>v?money(v):'–',false,null,money(totWon?totRev/totWon:0));
+  if(seg==='priv')body+=row('Avg PAX',s=>s.avgPax,v=>v?v.toFixed(1):'–',false,null,'');
+  body+=sec('Current pipeline stage');
+  STAGES.forEach((st,si)=>{
+    const tot=S.reduce((a,s)=>a+s.stages[si],0);
+    body+=row(st,s=>s.stages[si],fmt,true,null,fmt(tot));
+  });
+  if(hasAct){
+    body+=sec('Outreach activity — manual sends (matches GHL Agent Report definition)');
+    const at=k=>A.reduce((a,x)=>a+x[k],0);
+    body+=`<tr><td>Calls</td><td class="num tot">${fmt(at('call'))}</td>${REPS.map((n,i)=>{const t=at('call');const sel=STATE.rep===n?' style="background:color-mix(in srgb,var(--gold) 10%,transparent)"':'';return `<td class="num"${sel}>${fmt(A[i].call)}</td><td class="num subtle"${sel}>${t?((A[i].call/t)*100).toFixed(1)+'%':''}</td>`;}).join('')}</tr>`;
+    body+=`<tr><td>SMS</td><td class="num tot">${fmt(at('sms'))}</td>${REPS.map((n,i)=>{const t=at('sms');const sel=STATE.rep===n?' style="background:color-mix(in srgb,var(--gold) 10%,transparent)"':'';return `<td class="num"${sel}>${fmt(A[i].sms)}</td><td class="num subtle"${sel}>${t?((A[i].sms/t)*100).toFixed(1)+'%':''}</td>`;}).join('')}</tr>`;
+    body+=`<tr><td>Emails</td><td class="num tot">${fmt(at('email'))}</td>${REPS.map((n,i)=>{const t=at('email');const sel=STATE.rep===n?' style="background:color-mix(in srgb,var(--gold) 10%,transparent)"':'';return `<td class="num"${sel}>${fmt(A[i].email)}</td><td class="num subtle"${sel}>${t?((A[i].email/t)*100).toFixed(1)+'%':''}</td>`;}).join('')}</tr>`;
+  }
+
+  const head=`<tr><th style="min-width:180px">Metric</th><th class="num">Total</th>${REPS.map(n=>`<th class="num" colspan="2"><span style="display:inline-flex;align-items:center;gap:6px"><span class="spark" style="background:${avColors[n]}"></span>${n.split(' ')[0]}</span></th>`).join('')}</tr>`;
+
   document.getElementById('v-score').innerHTML=`
    <div class="seg" style="margin-bottom:14px">
      <button class="${seg==='all'?'on':''}" onclick="setScSeg('all')">All cruise types</button>
      <button class="${seg==='priv'?'on':''}" onclick="setScSeg('priv')">Private Cruise only</button>
    </div>
-   <div class="card col-12"><h3>Rep productivity scorecard</h3><div class="desc">Per-rep opportunity metrics ${seg==='priv'?'(Private Cruise)':'(all cruise types)'} for the selected range — the sales side of the June sheet, live. Messaging activity (SMS/email/calls) is in GHL's Agent Report.</div>
-    <div class="scrollx"><table><thead><tr><th>Rep</th><th>Leads</th><th>Won</th><th>Lost</th><th>Open</th><th>Conv.</th><th>Avg Deal</th><th>Revenue</th>${seg==='priv'?'<th>Avg PAX</th>':''}</tr></thead>
-    <tbody>
-    ${rows.sort((a,b)=>b.rev-a.rev).map(r=>row(r,STATE.rep===r.name?'sel':'')).join('')}
-    ${row(unData,'')}
-    ${totalRow}
-    </tbody></table></div>
-    <div class="note info" style="margin-top:14px"><span class="i">ℹ</span><div><b>Reading it:</b> "Leads %" is each rep's share of all ${seg==='priv'?'private cruise ':''}leads. <b>Unassigned</b> is mostly Public Party ticket sales that auto-complete as Won — that's why its conversion looks near-100% and why per-rep conversion is the truer productivity signal. Tie leads to reps in GHL to shrink the Unassigned row.</div></div>
+   <div class="card col-12"><h3>Head-to-head — rep vs rep</h3>
+    <div class="desc">Every rep side by side for the selected range${cb?' · ▲▼ = change vs the comparison period':''}. The % column is each rep's share of the four-rep total. GHL's Agent Report shows one rep at a time — this is the side-by-side view.</div>
+    <div class="scrollx"><table class="h2h"><thead>${head}</thead><tbody>${body}</tbody></table></div>
+    ${hasAct?'':'<div class="note" style="margin-top:14px"><span class="i">◆</span><div><b>Calls / SMS / Emails are being wired in.</b> They will appear as rows in this same side-by-side table, counted the same way GHL\'s Agent Report counts them (manual sends only, excluding campaign blasts).</div></div>'}
+   </div>
+   <div class="card col-12" style="margin-top:15px">
+    <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px;margin-bottom:6px">
+      <div><h3 style="margin:0">How each rep tracks month over month</h3>
+        <div class="desc" style="margin:2px 0 0">Full history — every rep on one chart, so you can see this month against other months and years</div></div>
+      <select id="trendmetric">${Object.entries(TREND_LABEL).map(([k,v])=>`<option value="${k}"${STATE.trend===k?' selected':''}>${v}</option>`).join('')}</select>
+    </div>
+    ${trendChart(STATE.trend,seg)}
    </div>`;
+  const tm=document.getElementById('trendmetric');
+  if(tm)tm.addEventListener('change',e=>{STATE.trend=e.target.value;renderScore();});
 }
 window.setScSeg=function(s){STATE.scSeg=s;renderScore();};
 

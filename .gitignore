@@ -6,3 +6,4 @@ __pycache__/
 *.pyc
 report.html
 report.png
+!activity.json

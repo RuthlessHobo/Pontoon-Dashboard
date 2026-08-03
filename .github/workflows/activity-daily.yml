@@ -1,0 +1,48 @@
+name: Pontoon Dashboard — daily rep activity crawl
+
+# Counts each rep's MANUAL outbound calls / SMS / emails from the GHL Conversations
+# feed and commits activity.json, which the hourly dashboard build bakes in.
+# Separate from the hourly job because this is heavy (~45k conversations).
+# READ-ONLY against GoHighLevel.
+
+on:
+  schedule:
+    - cron: "0 8 * * *"     # 08:00 UTC daily (~3am CT)
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+concurrency:
+  group: pontoon-activity
+  cancel-in-progress: false
+
+jobs:
+  crawl:
+    runs-on: ubuntu-latest
+    timeout-minutes: 330
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Crawl rep activity
+        env:
+          GHL_PIT: ${{ secrets.GHL_PIT }}
+          ACT_START: "2026-06-01"
+          ACT_WORKERS: "6"
+          ACT_BUDGET_MIN: "280"
+        run: python3 activity.py
+
+      - name: Commit activity counts
+        run: |
+          git config user.name  "pontoon-dashboard-bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add -f activity.json
+          if git diff --cached --quiet; then
+            echo "No change in activity counts."
+          else
+            git commit -m "chore: refresh rep activity counts [skip ci]"
+            git push
+          fi
