@@ -1,9 +1,9 @@
 {
  "window": {
   "start": "2026-06-01",
-  "end": "2026-10-29"
+  "end": "2026-10-30"
  },
- "conversations_processed": 7278,
+ "conversations_processed": 7310,
  "complete": true,
  "schema": 2,
  "by_rep": {
@@ -11,13 +11,13 @@
    "name": "Alyssa Erspamer",
    "totals": {
     "m": {
-     "sms": 1998,
-     "sms_del": 1964,
+     "sms": 2014,
+     "sms_del": 1980,
      "sms_fail": 33,
-     "email": 184,
-     "call": 683,
-     "call_ans": 649,
-     "call_secs": 62108
+     "email": 185,
+     "call": 686,
+     "call_ans": 653,
+     "call_secs": 62735
     },
     "a": {
      "sms": 0,
@@ -30,15 +30,35 @@
     }
    },
    "by_day": {
-    "2026-10-29": {
+    "2026-10-30": {
      "m": {
-      "sms": 3,
-      "sms_del": 3,
+      "sms": 5,
+      "sms_del": 5,
       "sms_fail": 0,
       "email": 0,
-      "call": 3,
-      "call_ans": 2,
-      "call_secs": 401
+      "call": 1,
+      "call_ans": 1,
+      "call_secs": 33
+     },
+     "a": {
+      "sms": 0,
+      "sms_del": 0,
+      "sms_fail": 0,
+      "email": 0,
+      "call": 0,
+      "call_ans": 0,
+      "call_secs": 0
+     }
+    },
+    "2026-10-29": {
+     "m": {
+      "sms": 14,
+      "sms_del": 14,
+      "sms_fail": 0,
+      "email": 1,
+      "call": 5,
+      "call_ans": 5,
+      "call_secs": 995
      },
      "a": {
       "sms": 0,
@@ -70,15 +90,35 @@
       "call_secs": 0
      }
     },
-    "2026-10-28": {
+    "2026-10-24": {
      "m": {
-      "sms": 2,
-      "sms_del": 2,
+      "sms": 41,
+      "sms_del": 41,
+      "sms_fail": 0,
+      "email": 1,
+      "call": 16,
+      "call_ans": 16,
+      "call_secs": 1528
+     },
+     "a": {
+      "sms": 0,
+      "sms_del": 0,
       "sms_fail": 0,
       "email": 0,
       "call": 0,
       "call_ans": 0,
       "call_secs": 0
+     }
+    },
+    "2026-10-22": {
+     "m": {
+      "sms": 20,
+      "sms_del": 19,
+      "sms_fail": 1,
+      "email": 4,
+      "call": 10,
+      "call_ans": 10,
+      "call_secs": 1606
      },
      "a": {
       "sms": 0,
@@ -99,6 +139,46 @@
       "call": 1,
       "call_ans": 1,
       "call_secs": 690
+     },
+     "a": {
+      "sms": 0,
+      "sms_del": 0,
+      "sms_fail": 0,
+      "email": 0,
+      "call": 0,
+      "call_ans": 0,
+      "call_secs": 0
+     }
+    },
+    "2026-07-28": {
+     "m": {
+      "sms": 26,
+      "sms_del": 26,
+      "sms_fail": 0,
+      "email": 2,
+      "call": 8,
+      "call_ans": 8,
+      "call_secs": 611
+     },
+     "a": {
+      "sms": 0,
+      "sms_del": 0,
+      "sms_fail": 0,
+      "email": 0,
+      "call": 0,
+      "call_ans": 0,
+      "call_secs": 0
+     }
+    },
+    "2026-10-28": {
+     "m": {
+      "sms": 2,
+      "sms_del": 2,
+      "sms_fail": 0,
+      "email": 0,
+      "call": 0,
+      "call_ans": 0,
+      "call_secs": 0
      },
      "a": {
       "sms": 0,
@@ -150,46 +230,6 @@
       "call_secs": 0
      }
     },
-    "2026-07-28": {
-     "m": {
-      "sms": 26,
-      "sms_del": 26,
-      "sms_fail": 0,
-      "email": 2,
-      "call": 8,
-      "call_ans": 8,
-      "call_secs": 611
-     },
-     "a": {
-      "sms": 0,
-      "sms_del": 0,
-      "sms_fail": 0,
-      "email": 0,
-      "call": 0,
-      "call_ans": 0,
-      "call_secs": 0
-     }
-    },
-    "2026-10-24": {
-     "m": {
-      "sms": 41,
-      "sms_del": 41,
-      "sms_fail": 0,
-      "email": 1,
-      "call": 16,
-      "call_ans": 16,
-      "call_secs": 1528
-     },
-     "a": {
-      "sms": 0,
-      "sms_del": 0,
-      "sms_fail": 0,
-      "email": 0,
-      "call": 0,
-      "call_ans": 0,
-      "call_secs": 0
-     }
-    },
     "2026-10-27": {
      "m": {
       "sms": 5,
@@ -199,26 +239,6 @@
       "call": 3,
       "call_ans": 3,
       "call_secs": 72
-     },
-     "a": {
-      "sms": 0,
-      "sms_del": 0,
-      "sms_fail": 0,
-      "email": 0,
-      "call": 0,
-      "call_ans": 0,
-      "call_secs": 0
-     }
-    },
-    "2026-10-22": {
-     "m": {
-      "sms": 20,
-      "sms_del": 19,
-      "sms_fail": 1,
-      "email": 4,
-      "call": 10,
-      "call_ans": 10,
-      "call_secs": 1606
      },
      "a": {
       "sms": 0,
@@ -2052,1471 +2072,6 @@
     }
    }
   },
-  "xLxKq3g1OO9GLCYioRQg": {
-   "name": "Erin Nicholson",
-   "totals": {
-    "m": {
-     "sms": 2863,
-     "sms_del": 2825,
-     "sms_fail": 38,
-     "email": 43,
-     "call": 721,
-     "call_ans": 680,
-     "call_secs": 56923
-    },
-    "a": {
-     "sms": 0,
-     "sms_del": 0,
-     "sms_fail": 0,
-     "email": 0,
-     "call": 0,
-     "call_ans": 0,
-     "call_secs": 0
-    }
-   },
-   "by_day": {
-    "2026-10-04": {
-     "m": {
-      "sms": 17,
-      "sms_del": 17,
-      "sms_fail": 0,
-      "email": 0,
-      "call": 5,
-      "call_ans": 5,
-      "call_secs": 396
-     },
-     "a": {
-      "sms": 0,
-      "sms_del": 0,
-      "sms_fail": 0,
-      "email": 0,
-      "call": 0,
-      "call_ans": 0,
-      "call_secs": 0
-     }
-    },
-    "2026-10-25": {
-     "m": {
-      "sms": 33,
-      "sms_del": 33,
-      "sms_fail": 0,
-      "email": 0,
-      "call": 20,
-      "call_ans": 18,
-      "call_secs": 2410
-     },
-     "a": {
-      "sms": 0,
-      "sms_del": 0,
-      "sms_fail": 0,
-      "email": 0,
-      "call": 0,
-      "call_ans": 0,
-      "call_secs": 0
-     }
-    },
-    "2026-10-10": {
-     "m": {
-      "sms": 41,
-      "sms_del": 39,
-      "sms_fail": 2,
-      "email": 1,
-      "call": 19,
-      "call_ans": 19,
-      "call_secs": 1138
-     },
-     "a": {
-      "sms": 0,
-      "sms_del": 0,
-      "sms_fail": 0,
-      "email": 0,
-      "call": 0,
-      "call_ans": 0,
-      "call_secs": 0
-     }
-    },
-    "2026-10-19": {
-     "m": {
-      "sms": 8,
-      "sms_del": 6,
-      "sms_fail": 2,
-      "email": 1,
-      "call": 9,
-      "call_ans": 9,
-      "call_secs": 782
-     },
-     "a": {
-      "sms": 0,
-      "sms_del": 0,
-      "sms_fail": 0,
-      "email": 0,
-      "call": 0,
-      "call_ans": 0,
-      "call_secs": 0
-     }
-    },
-    "2026-10-11": {
-     "m": {
-      "sms": 16,
-      "sms_del": 16,
-      "sms_fail": 0,
-      "email": 2,
-      "call": 8,
-      "call_ans": 8,
-      "call_secs": 678
-     },
-     "a": {
-      "sms": 0,
-      "sms_del": 0,
-      "sms_fail": 0,
-      "email": 0,
-      "call": 0,
-      "call_ans": 0,
-      "call_secs": 0
-     }
-    },
-    "2026-09-21": {
-     "m": {
-      "sms": 58,
-      "sms_del": 57,
-      "sms_fail": 1,
-      "email": 2,
-      "call": 6,
-      "call_ans": 6,
-      "call_secs": 104
-     },
-     "a": {
-      "sms": 0,
-      "sms_del": 0,
-      "sms_fail": 0,
-      "email": 0,
-      "call": 0,
-      "call_ans": 0,
-      "call_secs": 0
-     }
-    },
-    "2026-06-21": {
-     "m": {
-      "sms": 45,
-      "sms_del": 44,
-      "sms_fail": 1,
-      "email": 1,
-      "call": 11,
-      "call_ans": 11,
-      "call_secs": 427
-     },
-     "a": {
-      "sms": 0,
-      "sms_del": 0,
-      "sms_fail": 0,
-      "email": 0,
-      "call": 0,
-      "call_ans": 0,
-      "call_secs": 0
-     }
-    },
-    "2026-09-20": {
-     "m": {
-      "sms": 31,
-      "sms_del": 31,
-      "sms_fail": 0,
-      "email": 0,
-      "call": 20,
-      "call_ans": 20,
-      "call_secs": 1095
-     },
-     "a": {
-      "sms": 0,
-      "sms_del": 0,
-      "sms_fail": 0,
-      "email": 0,
-      "call": 0,
-      "call_ans": 0,
-      "call_secs": 0
-     }
-    },
-    "2026-10-12": {
-     "m": {
-      "sms": 44,
-      "sms_del": 44,
-      "sms_fail": 0,
-      "email": 1,
-      "call": 20,
-      "call_ans": 20,
-      "call_secs": 2728
-     },
-     "a": {
-      "sms": 0,
-      "sms_del": 0,
-      "sms_fail": 0,
-      "email": 0,
-      "call": 0,
-      "call_ans": 0,
-      "call_secs": 0
-     }
-    },
-    "2026-10-26": {
-     "m": {
-      "sms": 18,
-      "sms_del": 18,
-      "sms_fail": 0,
-      "email": 0,
-      "call": 7,
-      "call_ans": 7,
-      "call_secs": 415
-     },
-     "a": {
-      "sms": 0,
-      "sms_del": 0,
-      "sms_fail": 0,
-      "email": 0,
-      "call": 0,
-      "call_ans": 0,
-      "call_secs": 0
-     }
-    },
-    "2026-10-18": {
-     "m": {
-      "sms": 39,
-      "sms_del": 39,
-      "sms_fail": 0,
-      "email": 2,
-      "call": 8,
-      "call_ans": 8,
-      "call_secs": 1218
-     },
-     "a": {
-      "sms": 0,
-      "sms_del": 0,
-      "sms_fail": 0,
-      "email": 0,
-      "call": 0,
-      "call_ans": 0,
-      "call_secs": 0
-     }
-    },
-    "2026-09-28": {
-     "m": {
-      "sms": 40,
-      "sms_del": 38,
-      "sms_fail": 2,
-      "email": 2,
-      "call": 21,
-      "call_ans": 19,
-      "call_secs": 2302
-     },
-     "a": {
-      "sms": 0,
-      "sms_del": 0,
-      "sms_fail": 0,
-      "email": 0,
-      "call": 0,
-      "call_ans": 0,
-      "call_secs": 0
-     }
-    },
-    "2026-10-03": {
-     "m": {
-      "sms": 28,
-      "sms_del": 28,
-      "sms_fail": 0,
-      "email": 0,
-      "call": 9,
-      "call_ans": 9,
-      "call_secs": 812
-     },
-     "a": {
-      "sms": 0,
-      "sms_del": 0,
-      "sms_fail": 0,
-      "email": 0,
-      "call": 0,
-      "call_ans": 0,
-      "call_secs": 0
-     }
-    },
-    "2026-08-23": {
-     "m": {
-      "sms": 29,
-      "sms_del": 29,
-      "sms_fail": 0,
-      "email": 0,
-      "call": 8,
-      "call_ans": 8,
-      "call_secs": 743
-     },
-     "a": {
-      "sms": 0,
-      "sms_del": 0,
-      "sms_fail": 0,
-      "email": 0,
-      "call": 0,
-      "call_ans": 0,
-      "call_secs": 0
-     }
-    },
-    "2026-08-03": {
-     "m": {
-      "sms": 40,
-      "sms_del": 38,
-      "sms_fail": 2,
-      "email": 0,
-      "call": 15,
-      "call_ans": 15,
-      "call_secs": 708
-     },
-     "a": {
-      "sms": 0,
-      "sms_del": 0,
-      "sms_fail": 0,
-      "email": 0,
-      "call": 0,
-      "call_ans": 0,
-      "call_secs": 0
-     }
-    },
-    "2026-07-19": {
-     "m": {
-      "sms": 66,
-      "sms_del": 66,
-      "sms_fail": 0,
-      "email": 1,
-      "call": 10,
-      "call_ans": 10,
-      "call_secs": 1535
-     },
-     "a": {
-      "sms": 0,
-      "sms_del": 0,
-      "sms_fail": 0,
-      "email": 0,
-      "call": 0,
-      "call_ans": 0,
-      "call_secs": 0
-     }
-    },
-    "2026-08-04": {
-     "m": {
-      "sms": 46,
-      "sms_del": 46,
-      "sms_fail": 0,
-      "email": 1,
-      "call": 8,
-      "call_ans": 8,
-      "call_secs": 1120
-     },
-     "a": {
-      "sms": 0,
-      "sms_del": 0,
-      "sms_fail": 0,
-      "email": 0,
-      "call": 0,
-      "call_ans": 0,
-      "call_secs": 0
-     }
-    },
-    "2026-10-05": {
-     "m": {
-      "sms": 34,
-      "sms_del": 34,
-      "sms_fail": 0,
-      "email": 1,
-      "call": 13,
-      "call_ans": 10,
-      "call_secs": 1146
-     },
-     "a": {
-      "sms": 0,
-      "sms_del": 0,
-      "sms_fail": 0,
-      "email": 0,
-      "call": 0,
-      "call_ans": 0,
-      "call_secs": 0
-     }
-    },
-    "2026-07-04": {
-     "m": {
-      "sms": 150,
-      "sms_del": 147,
-      "sms_fail": 3,
-      "email": 0,
-      "call": 14,
-      "call_ans": 14,
-      "call_secs": 849
-     },
-     "a": {
-      "sms": 0,
-      "sms_del": 0,
-      "sms_fail": 0,
-      "email": 0,
-      "call": 0,
-      "call_ans": 0,
-      "call_secs": 0
-     }
-    },
-    "2026-10-17": {
-     "m": {
-      "sms": 41,
-      "sms_del": 41,
-      "sms_fail": 0,
-      "email": 0,
-      "call": 12,
-      "call_ans": 12,
-      "call_secs": 940
-     },
-     "a": {
-      "sms": 0,
-      "sms_del": 0,
-      "sms_fail": 0,
-      "email": 0,
-      "call": 0,
-      "call_ans": 0,
-      "call_secs": 0
-     }
-    },
-    "2026-08-31": {
-     "m": {
-      "sms": 9,
-      "sms_del": 9,
-      "sms_fail": 0,
-      "email": 3,
-      "call": 13,
-      "call_ans": 13,
-      "call_secs": 1984
-     },
-     "a": {
-      "sms": 0,
-      "sms_del": 0,
-      "sms_fail": 0,
-      "email": 0,
-      "call": 0,
-      "call_ans": 0,
-      "call_secs": 0
-     }
-    },
-    "2026-09-27": {
-     "m": {
-      "sms": 70,
-      "sms_del": 70,
-      "sms_fail": 0,
-      "email": 0,
-      "call": 19,
-      "call_ans": 19,
-      "call_secs": 1193
-     },
-     "a": {
-      "sms": 0,
-      "sms_del": 0,
-      "sms_fail": 0,
-      "email": 0,
-      "call": 0,
-      "call_ans": 0,
-      "call_secs": 0
-     }
-    },
-    "2026-08-16": {
-     "m": {
-      "sms": 109,
-      "sms_del": 107,
-      "sms_fail": 2,
-      "email": 1,
-      "call": 19,
-      "call_ans": 19,
-      "call_secs": 1078
-     },
-     "a": {
-      "sms": 0,
-      "sms_del": 0,
-      "sms_fail": 0,
-      "email": 0,
-      "call": 0,
-      "call_ans": 0,
-      "call_secs": 0
-     }
-    },
-    "2026-09-26": {
-     "m": {
-      "sms": 38,
-      "sms_del": 38,
-      "sms_fail": 0,
-      "email": 1,
-      "call": 10,
-      "call_ans": 8,
-      "call_secs": 972
-     },
-     "a": {
-      "sms": 0,
-      "sms_del": 0,
-      "sms_fail": 0,
-      "email": 0,
-      "call": 0,
-      "call_ans": 0,
-      "call_secs": 0
-     }
-    },
-    "2026-08-24": {
-     "m": {
-      "sms": 66,
-      "sms_del": 61,
-      "sms_fail": 5,
-      "email": 4,
-      "call": 29,
-      "call_ans": 25,
-      "call_secs": 1560
-     },
-     "a": {
-      "sms": 0,
-      "sms_del": 0,
-      "sms_fail": 0,
-      "email": 0,
-      "call": 0,
-      "call_ans": 0,
-      "call_secs": 0
-     }
-    },
-    "2026-09-13": {
-     "m": {
-      "sms": 48,
-      "sms_del": 48,
-      "sms_fail": 0,
-      "email": 6,
-      "call": 18,
-      "call_ans": 18,
-      "call_secs": 1124
-     },
-     "a": {
-      "sms": 0,
-      "sms_del": 0,
-      "sms_fail": 0,
-      "email": 0,
-      "call": 0,
-      "call_ans": 0,
-      "call_secs": 0
-     }
-    },
-    "2026-07-16": {
-     "m": {
-      "sms": 4,
-      "sms_del": 4,
-      "sms_fail": 0,
-      "email": 0,
-      "call": 0,
-      "call_ans": 0,
-      "call_secs": 0
-     },
-     "a": {
-      "sms": 0,
-      "sms_del": 0,
-      "sms_fail": 0,
-      "email": 0,
-      "call": 0,
-      "call_ans": 0,
-      "call_secs": 0
-     }
-    },
-    "2026-08-17": {
-     "m": {
-      "sms": 43,
-      "sms_del": 43,
-      "sms_fail": 0,
-      "email": 1,
-      "call": 22,
-      "call_ans": 18,
-      "call_secs": 1746
-     },
-     "a": {
-      "sms": 0,
-      "sms_del": 0,
-      "sms_fail": 0,
-      "email": 0,
-      "call": 0,
-      "call_ans": 0,
-      "call_secs": 0
-     }
-    },
-    "2026-09-05": {
-     "m": {
-      "sms": 105,
-      "sms_del": 105,
-      "sms_fail": 0,
-      "email": 0,
-      "call": 21,
-      "call_ans": 21,
-      "call_secs": 1356
-     },
-     "a": {
-      "sms": 0,
-      "sms_del": 0,
-      "sms_fail": 0,
-      "email": 0,
-      "call": 0,
-      "call_ans": 0,
-      "call_secs": 0
-     }
-    },
-    "2026-09-14": {
-     "m": {
-      "sms": 38,
-      "sms_del": 34,
-      "sms_fail": 4,
-      "email": 1,
-      "call": 14,
-      "call_ans": 13,
-      "call_secs": 2102
-     },
-     "a": {
-      "sms": 0,
-      "sms_del": 0,
-      "sms_fail": 0,
-      "email": 0,
-      "call": 0,
-      "call_ans": 0,
-      "call_secs": 0
-     }
-    },
-    "2026-09-12": {
-     "m": {
-      "sms": 46,
-      "sms_del": 46,
-      "sms_fail": 0,
-      "email": 0,
-      "call": 21,
-      "call_ans": 21,
-      "call_secs": 1789
-     },
-     "a": {
-      "sms": 0,
-      "sms_del": 0,
-      "sms_fail": 0,
-      "email": 0,
-      "call": 0,
-      "call_ans": 0,
-      "call_secs": 0
-     }
-    },
-    "2026-07-26": {
-     "m": {
-      "sms": 132,
-      "sms_del": 130,
-      "sms_fail": 2,
-      "email": 0,
-      "call": 32,
-      "call_ans": 31,
-      "call_secs": 2346
-     },
-     "a": {
-      "sms": 0,
-      "sms_del": 0,
-      "sms_fail": 0,
-      "email": 0,
-      "call": 0,
-      "call_ans": 0,
-      "call_secs": 0
-     }
-    },
-    "2026-09-06": {
-     "m": {
-      "sms": 190,
-      "sms_del": 186,
-      "sms_fail": 4,
-      "email": 2,
-      "call": 23,
-      "call_ans": 20,
-      "call_secs": 2803
-     },
-     "a": {
-      "sms": 0,
-      "sms_del": 0,
-      "sms_fail": 0,
-      "email": 0,
-      "call": 0,
-      "call_ans": 0,
-      "call_secs": 0
-     }
-    },
-    "2026-08-10": {
-     "m": {
-      "sms": 37,
-      "sms_del": 37,
-      "sms_fail": 0,
-      "email": 1,
-      "call": 13,
-      "call_ans": 13,
-      "call_secs": 1011
-     },
-     "a": {
-      "sms": 0,
-      "sms_del": 0,
-      "sms_fail": 0,
-      "email": 0,
-      "call": 0,
-      "call_ans": 0,
-      "call_secs": 0
-     }
-    },
-    "2026-08-12": {
-     "m": {
-      "sms": 10,
-      "sms_del": 10,
-      "sms_fail": 0,
-      "email": 0,
-      "call": 1,
-      "call_ans": 1,
-      "call_secs": 21
-     },
-     "a": {
-      "sms": 0,
-      "sms_del": 0,
-      "sms_fail": 0,
-      "email": 0,
-      "call": 0,
-      "call_ans": 0,
-      "call_secs": 0
-     }
-    },
-    "2026-09-19": {
-     "m": {
-      "sms": 107,
-      "sms_del": 107,
-      "sms_fail": 0,
-      "email": 1,
-      "call": 18,
-      "call_ans": 16,
-      "call_secs": 933
-     },
-     "a": {
-      "sms": 0,
-      "sms_del": 0,
-      "sms_fail": 0,
-      "email": 0,
-      "call": 0,
-      "call_ans": 0,
-      "call_secs": 0
-     }
-    },
-    "2026-09-09": {
-     "m": {
-      "sms": 0,
-      "sms_del": 0,
-      "sms_fail": 0,
-      "email": 1,
-      "call": 0,
-      "call_ans": 0,
-      "call_secs": 0
-     },
-     "a": {
-      "sms": 0,
-      "sms_del": 0,
-      "sms_fail": 0,
-      "email": 0,
-      "call": 0,
-      "call_ans": 0,
-      "call_secs": 0
-     }
-    },
-    "2026-09-16": {
-     "m": {
-      "sms": 0,
-      "sms_del": 0,
-      "sms_fail": 0,
-      "email": 1,
-      "call": 0,
-      "call_ans": 0,
-      "call_secs": 0
-     },
-     "a": {
-      "sms": 0,
-      "sms_del": 0,
-      "sms_fail": 0,
-      "email": 0,
-      "call": 0,
-      "call_ans": 0,
-      "call_secs": 0
-     }
-    },
-    "2026-07-25": {
-     "m": {
-      "sms": 182,
-      "sms_del": 180,
-      "sms_fail": 2,
-      "email": 0,
-      "call": 25,
-      "call_ans": 23,
-      "call_secs": 1737
-     },
-     "a": {
-      "sms": 0,
-      "sms_del": 0,
-      "sms_fail": 0,
-      "email": 0,
-      "call": 0,
-      "call_ans": 0,
-      "call_secs": 0
-     }
-    },
-    "2026-08-02": {
-     "m": {
-      "sms": 30,
-      "sms_del": 30,
-      "sms_fail": 0,
-      "email": 0,
-      "call": 17,
-      "call_ans": 17,
-      "call_secs": 1765
-     },
-     "a": {
-      "sms": 0,
-      "sms_del": 0,
-      "sms_fail": 0,
-      "email": 0,
-      "call": 0,
-      "call_ans": 0,
-      "call_secs": 0
-     }
-    },
-    "2026-09-07": {
-     "m": {
-      "sms": 11,
-      "sms_del": 11,
-      "sms_fail": 0,
-      "email": 2,
-      "call": 11,
-      "call_ans": 11,
-      "call_secs": 241
-     },
-     "a": {
-      "sms": 0,
-      "sms_del": 0,
-      "sms_fail": 0,
-      "email": 0,
-      "call": 0,
-      "call_ans": 0,
-      "call_secs": 0
-     }
-    },
-    "2026-08-15": {
-     "m": {
-      "sms": 48,
-      "sms_del": 48,
-      "sms_fail": 0,
-      "email": 0,
-      "call": 6,
-      "call_ans": 5,
-      "call_secs": 317
-     },
-     "a": {
-      "sms": 0,
-      "sms_del": 0,
-      "sms_fail": 0,
-      "email": 0,
-      "call": 0,
-      "call_ans": 0,
-      "call_secs": 0
-     }
-    },
-    "2026-08-09": {
-     "m": {
-      "sms": 114,
-      "sms_del": 113,
-      "sms_fail": 1,
-      "email": 0,
-      "call": 12,
-      "call_ans": 10,
-      "call_secs": 464
-     },
-     "a": {
-      "sms": 0,
-      "sms_del": 0,
-      "sms_fail": 0,
-      "email": 0,
-      "call": 0,
-      "call_ans": 0,
-      "call_secs": 0
-     }
-    },
-    "2026-08-22": {
-     "m": {
-      "sms": 80,
-      "sms_del": 80,
-      "sms_fail": 0,
-      "email": 0,
-      "call": 16,
-      "call_ans": 16,
-      "call_secs": 1010
-     },
-     "a": {
-      "sms": 0,
-      "sms_del": 0,
-      "sms_fail": 0,
-      "email": 0,
-      "call": 0,
-      "call_ans": 0,
-      "call_secs": 0
-     }
-    },
-    "2026-08-29": {
-     "m": {
-      "sms": 129,
-      "sms_del": 129,
-      "sms_fail": 0,
-      "email": 0,
-      "call": 19,
-      "call_ans": 17,
-      "call_secs": 1288
-     },
-     "a": {
-      "sms": 0,
-      "sms_del": 0,
-      "sms_fail": 0,
-      "email": 0,
-      "call": 0,
-      "call_ans": 0,
-      "call_secs": 0
-     }
-    },
-    "2026-08-26": {
-     "m": {
-      "sms": 2,
-      "sms_del": 2,
-      "sms_fail": 0,
-      "email": 0,
-      "call": 0,
-      "call_ans": 0,
-      "call_secs": 0
-     },
-     "a": {
-      "sms": 0,
-      "sms_del": 0,
-      "sms_fail": 0,
-      "email": 0,
-      "call": 0,
-      "call_ans": 0,
-      "call_secs": 0
-     }
-    },
-    "2026-08-30": {
-     "m": {
-      "sms": 37,
-      "sms_del": 35,
-      "sms_fail": 2,
-      "email": 1,
-      "call": 15,
-      "call_ans": 14,
-      "call_secs": 1270
-     },
-     "a": {
-      "sms": 0,
-      "sms_del": 0,
-      "sms_fail": 0,
-      "email": 0,
-      "call": 0,
-      "call_ans": 0,
-      "call_secs": 0
-     }
-    },
-    "2026-08-25": {
-     "m": {
-      "sms": 5,
-      "sms_del": 5,
-      "sms_fail": 0,
-      "email": 0,
-      "call": 1,
-      "call_ans": 1,
-      "call_secs": 23
-     },
-     "a": {
-      "sms": 0,
-      "sms_del": 0,
-      "sms_fail": 0,
-      "email": 0,
-      "call": 0,
-      "call_ans": 0,
-      "call_secs": 0
-     }
-    },
-    "2026-08-13": {
-     "m": {
-      "sms": 38,
-      "sms_del": 37,
-      "sms_fail": 1,
-      "email": 0,
-      "call": 0,
-      "call_ans": 0,
-      "call_secs": 0
-     },
-     "a": {
-      "sms": 0,
-      "sms_del": 0,
-      "sms_fail": 0,
-      "email": 0,
-      "call": 0,
-      "call_ans": 0,
-      "call_secs": 0
-     }
-    },
-    "2026-07-12": {
-     "m": {
-      "sms": 8,
-      "sms_del": 8,
-      "sms_fail": 0,
-      "email": 0,
-      "call": 6,
-      "call_ans": 6,
-      "call_secs": 628
-     },
-     "a": {
-      "sms": 0,
-      "sms_del": 0,
-      "sms_fail": 0,
-      "email": 0,
-      "call": 0,
-      "call_ans": 0,
-      "call_secs": 0
-     }
-    },
-    "2026-08-21": {
-     "m": {
-      "sms": 3,
-      "sms_del": 3,
-      "sms_fail": 0,
-      "email": 0,
-      "call": 0,
-      "call_ans": 0,
-      "call_secs": 0
-     },
-     "a": {
-      "sms": 0,
-      "sms_del": 0,
-      "sms_fail": 0,
-      "email": 0,
-      "call": 0,
-      "call_ans": 0,
-      "call_secs": 0
-     }
-    },
-    "2026-08-20": {
-     "m": {
-      "sms": 24,
-      "sms_del": 24,
-      "sms_fail": 0,
-      "email": 0,
-      "call": 3,
-      "call_ans": 3,
-      "call_secs": 286
-     },
-     "a": {
-      "sms": 0,
-      "sms_del": 0,
-      "sms_fail": 0,
-      "email": 0,
-      "call": 0,
-      "call_ans": 0,
-      "call_secs": 0
-     }
-    },
-    "2026-07-27": {
-     "m": {
-      "sms": 2,
-      "sms_del": 2,
-      "sms_fail": 0,
-      "email": 0,
-      "call": 1,
-      "call_ans": 1,
-      "call_secs": 291
-     },
-     "a": {
-      "sms": 0,
-      "sms_del": 0,
-      "sms_fail": 0,
-      "email": 0,
-      "call": 0,
-      "call_ans": 0,
-      "call_secs": 0
-     }
-    },
-    "2026-08-18": {
-     "m": {
-      "sms": 0,
-      "sms_del": 0,
-      "sms_fail": 0,
-      "email": 0,
-      "call": 1,
-      "call_ans": 1,
-      "call_secs": 0
-     },
-     "a": {
-      "sms": 0,
-      "sms_del": 0,
-      "sms_fail": 0,
-      "email": 0,
-      "call": 0,
-      "call_ans": 0,
-      "call_secs": 0
-     }
-    },
-    "2026-07-10": {
-     "m": {
-      "sms": 1,
-      "sms_del": 1,
-      "sms_fail": 0,
-      "email": 0,
-      "call": 2,
-      "call_ans": 2,
-      "call_secs": 590
-     },
-     "a": {
-      "sms": 0,
-      "sms_del": 0,
-      "sms_fail": 0,
-      "email": 0,
-      "call": 0,
-      "call_ans": 0,
-      "call_secs": 0
-     }
-    },
-    "2026-07-09": {
-     "m": {
-      "sms": 11,
-      "sms_del": 9,
-      "sms_fail": 2,
-      "email": 0,
-      "call": 4,
-      "call_ans": 1,
-      "call_secs": 26
-     },
-     "a": {
-      "sms": 0,
-      "sms_del": 0,
-      "sms_fail": 0,
-      "email": 0,
-      "call": 0,
-      "call_ans": 0,
-      "call_secs": 0
-     }
-    },
-    "2026-07-18": {
-     "m": {
-      "sms": 54,
-      "sms_del": 54,
-      "sms_fail": 0,
-      "email": 1,
-      "call": 23,
-      "call_ans": 21,
-      "call_secs": 1263
-     },
-     "a": {
-      "sms": 0,
-      "sms_del": 0,
-      "sms_fail": 0,
-      "email": 0,
-      "call": 0,
-      "call_ans": 0,
-      "call_secs": 0
-     }
-    },
-    "2026-07-22": {
-     "m": {
-      "sms": 6,
-      "sms_del": 6,
-      "sms_fail": 0,
-      "email": 0,
-      "call": 4,
-      "call_ans": 4,
-      "call_secs": 39
-     },
-     "a": {
-      "sms": 0,
-      "sms_del": 0,
-      "sms_fail": 0,
-      "email": 0,
-      "call": 0,
-      "call_ans": 0,
-      "call_secs": 0
-     }
-    },
-    "2026-07-21": {
-     "m": {
-      "sms": 4,
-      "sms_del": 4,
-      "sms_fail": 0,
-      "email": 0,
-      "call": 2,
-      "call_ans": 2,
-      "call_secs": 445
-     },
-     "a": {
-      "sms": 0,
-      "sms_del": 0,
-      "sms_fail": 0,
-      "email": 0,
-      "call": 0,
-      "call_ans": 0,
-      "call_secs": 0
-     }
-    },
-    "2026-06-01": {
-     "m": {
-      "sms": 6,
-      "sms_del": 6,
-      "sms_fail": 0,
-      "email": 0,
-      "call": 2,
-      "call_ans": 2,
-      "call_secs": 47
-     },
-     "a": {
-      "sms": 0,
-      "sms_del": 0,
-      "sms_fail": 0,
-      "email": 0,
-      "call": 0,
-      "call_ans": 0,
-      "call_secs": 0
-     }
-    },
-    "2026-07-15": {
-     "m": {
-      "sms": 16,
-      "sms_del": 16,
-      "sms_fail": 0,
-      "email": 0,
-      "call": 1,
-      "call_ans": 1,
-      "call_secs": 0
-     },
-     "a": {
-      "sms": 0,
-      "sms_del": 0,
-      "sms_fail": 0,
-      "email": 0,
-      "call": 0,
-      "call_ans": 0,
-      "call_secs": 0
-     }
-    },
-    "2026-07-05": {
-     "m": {
-      "sms": 17,
-      "sms_del": 17,
-      "sms_fail": 0,
-      "email": 0,
-      "call": 6,
-      "call_ans": 4,
-      "call_secs": 181
-     },
-     "a": {
-      "sms": 0,
-      "sms_del": 0,
-      "sms_fail": 0,
-      "email": 0,
-      "call": 0,
-      "call_ans": 0,
-      "call_secs": 0
-     }
-    },
-    "2026-07-01": {
-     "m": {
-      "sms": 7,
-      "sms_del": 7,
-      "sms_fail": 0,
-      "email": 0,
-      "call": 2,
-      "call_ans": 2,
-      "call_secs": 21
-     },
-     "a": {
-      "sms": 0,
-      "sms_del": 0,
-      "sms_fail": 0,
-      "email": 0,
-      "call": 0,
-      "call_ans": 0,
-      "call_secs": 0
-     }
-    },
-    "2026-06-20": {
-     "m": {
-      "sms": 53,
-      "sms_del": 53,
-      "sms_fail": 0,
-      "email": 0,
-      "call": 18,
-      "call_ans": 17,
-      "call_secs": 796
-     },
-     "a": {
-      "sms": 0,
-      "sms_del": 0,
-      "sms_fail": 0,
-      "email": 0,
-      "call": 0,
-      "call_ans": 0,
-      "call_secs": 0
-     }
-    },
-    "2026-07-02": {
-     "m": {
-      "sms": 11,
-      "sms_del": 11,
-      "sms_fail": 0,
-      "email": 0,
-      "call": 0,
-      "call_ans": 0,
-      "call_secs": 0
-     },
-     "a": {
-      "sms": 0,
-      "sms_del": 0,
-      "sms_fail": 0,
-      "email": 0,
-      "call": 0,
-      "call_ans": 0,
-      "call_secs": 0
-     }
-    },
-    "2026-06-25": {
-     "m": {
-      "sms": 31,
-      "sms_del": 31,
-      "sms_fail": 0,
-      "email": 1,
-      "call": 0,
-      "call_ans": 0,
-      "call_secs": 0
-     },
-     "a": {
-      "sms": 0,
-      "sms_del": 0,
-      "sms_fail": 0,
-      "email": 0,
-      "call": 0,
-      "call_ans": 0,
-      "call_secs": 0
-     }
-    },
-    "2026-06-24": {
-     "m": {
-      "sms": 21,
-      "sms_del": 21,
-      "sms_fail": 0,
-      "email": 0,
-      "call": 1,
-      "call_ans": 1,
-      "call_secs": 0
-     },
-     "a": {
-      "sms": 0,
-      "sms_del": 0,
-      "sms_fail": 0,
-      "email": 0,
-      "call": 0,
-      "call_ans": 0,
-      "call_secs": 0
-     }
-    },
-    "2026-06-22": {
-     "m": {
-      "sms": 1,
-      "sms_del": 1,
-      "sms_fail": 0,
-      "email": 0,
-      "call": 0,
-      "call_ans": 0,
-      "call_secs": 0
-     },
-     "a": {
-      "sms": 0,
-      "sms_del": 0,
-      "sms_fail": 0,
-      "email": 0,
-      "call": 0,
-      "call_ans": 0,
-      "call_secs": 0
-     }
-    },
-    "2026-06-03": {
-     "m": {
-      "sms": 25,
-      "sms_del": 25,
-      "sms_fail": 0,
-      "email": 0,
-      "call": 3,
-      "call_ans": 3,
-      "call_secs": 560
-     },
-     "a": {
-      "sms": 0,
-      "sms_del": 0,
-      "sms_fail": 0,
-      "email": 0,
-      "call": 0,
-      "call_ans": 0,
-      "call_secs": 0
-     }
-    },
-    "2026-06-09": {
-     "m": {
-      "sms": 1,
-      "sms_del": 1,
-      "sms_fail": 0,
-      "email": 0,
-      "call": 0,
-      "call_ans": 0,
-      "call_secs": 0
-     },
-     "a": {
-      "sms": 0,
-      "sms_del": 0,
-      "sms_fail": 0,
-      "email": 0,
-      "call": 0,
-      "call_ans": 0,
-      "call_secs": 0
-     }
-    },
-    "2026-06-08": {
-     "m": {
-      "sms": 9,
-      "sms_del": 9,
-      "sms_fail": 0,
-      "email": 0,
-      "call": 3,
-      "call_ans": 2,
-      "call_secs": 40
-     },
-     "a": {
-      "sms": 0,
-      "sms_del": 0,
-      "sms_fail": 0,
-      "email": 0,
-      "call": 0,
-      "call_ans": 0,
-      "call_secs": 0
-     }
-    },
-    "2026-06-04": {
-     "m": {
-      "sms": 0,
-      "sms_del": 0,
-      "sms_fail": 0,
-      "email": 0,
-      "call": 1,
-      "call_ans": 1,
-      "call_secs": 31
-     },
-     "a": {
-      "sms": 0,
-      "sms_del": 0,
-      "sms_fail": 0,
-      "email": 0,
-      "call": 0,
-      "call_ans": 0,
-      "call_secs": 0
-     }
-    }
-   }
-  },
   "U4PlleaPJ0iNoiT6njbn": {
    "name": "Pontoon Saloon Saloon",
    "totals": {
@@ -3524,7 +2079,7 @@
      "sms": 0,
      "sms_del": 0,
      "sms_fail": 0,
-     "email": 8449,
+     "email": 8475,
      "call": 0,
      "call_ans": 0,
      "call_secs": 0
@@ -3540,67 +2095,27 @@
     }
    },
    "by_day": {
+    "2026-10-30": {
+     "m": {
+      "sms": 0,
+      "sms_del": 0,
+      "sms_fail": 0,
+      "email": 2,
+      "call": 0,
+      "call_ans": 0,
+      "call_secs": 0
+     },
+     "a": {
+      "sms": 0,
+      "sms_del": 0,
+      "sms_fail": 0,
+      "email": 0,
+      "call": 0,
+      "call_ans": 0,
+      "call_secs": 0
+     }
+    },
     "2026-10-29": {
-     "m": {
-      "sms": 0,
-      "sms_del": 0,
-      "sms_fail": 0,
-      "email": 1,
-      "call": 0,
-      "call_ans": 0,
-      "call_secs": 0
-     },
-     "a": {
-      "sms": 0,
-      "sms_del": 0,
-      "sms_fail": 0,
-      "email": 0,
-      "call": 0,
-      "call_ans": 0,
-      "call_secs": 0
-     }
-    },
-    "2026-10-28": {
-     "m": {
-      "sms": 0,
-      "sms_del": 0,
-      "sms_fail": 0,
-      "email": 9,
-      "call": 0,
-      "call_ans": 0,
-      "call_secs": 0
-     },
-     "a": {
-      "sms": 0,
-      "sms_del": 0,
-      "sms_fail": 0,
-      "email": 0,
-      "call": 0,
-      "call_ans": 0,
-      "call_secs": 0
-     }
-    },
-    "2026-10-03": {
-     "m": {
-      "sms": 0,
-      "sms_del": 0,
-      "sms_fail": 0,
-      "email": 44,
-      "call": 0,
-      "call_ans": 0,
-      "call_secs": 0
-     },
-     "a": {
-      "sms": 0,
-      "sms_del": 0,
-      "sms_fail": 0,
-      "email": 0,
-      "call": 0,
-      "call_ans": 0,
-      "call_secs": 0
-     }
-    },
-    "2026-10-01": {
      "m": {
       "sms": 0,
       "sms_del": 0,
@@ -3620,52 +2135,12 @@
       "call_secs": 0
      }
     },
-    "2026-09-07": {
+    "2026-10-28": {
      "m": {
       "sms": 0,
       "sms_del": 0,
       "sms_fail": 0,
-      "email": 50,
-      "call": 0,
-      "call_ans": 0,
-      "call_secs": 0
-     },
-     "a": {
-      "sms": 0,
-      "sms_del": 0,
-      "sms_fail": 0,
-      "email": 0,
-      "call": 0,
-      "call_ans": 0,
-      "call_secs": 0
-     }
-    },
-    "2026-09-04": {
-     "m": {
-      "sms": 0,
-      "sms_del": 0,
-      "sms_fail": 0,
-      "email": 110,
-      "call": 0,
-      "call_ans": 0,
-      "call_secs": 0
-     },
-     "a": {
-      "sms": 0,
-      "sms_del": 0,
-      "sms_fail": 0,
-      "email": 0,
-      "call": 0,
-      "call_ans": 0,
-      "call_secs": 0
-     }
-    },
-    "2026-09-01": {
-     "m": {
-      "sms": 0,
-      "sms_del": 0,
-      "sms_fail": 0,
-      "email": 21,
+      "email": 10,
       "call": 0,
       "call_ans": 0,
       "call_secs": 0
@@ -3760,6 +2235,26 @@
       "call_secs": 0
      }
     },
+    "2026-10-01": {
+     "m": {
+      "sms": 0,
+      "sms_del": 0,
+      "sms_fail": 0,
+      "email": 24,
+      "call": 0,
+      "call_ans": 0,
+      "call_secs": 0
+     },
+     "a": {
+      "sms": 0,
+      "sms_del": 0,
+      "sms_fail": 0,
+      "email": 0,
+      "call": 0,
+      "call_ans": 0,
+      "call_secs": 0
+     }
+    },
     "2026-09-30": {
      "m": {
       "sms": 0,
@@ -3806,6 +2301,126 @@
       "sms_del": 0,
       "sms_fail": 0,
       "email": 100,
+      "call": 0,
+      "call_ans": 0,
+      "call_secs": 0
+     },
+     "a": {
+      "sms": 0,
+      "sms_del": 0,
+      "sms_fail": 0,
+      "email": 0,
+      "call": 0,
+      "call_ans": 0,
+      "call_secs": 0
+     }
+    },
+    "2026-09-23": {
+     "m": {
+      "sms": 0,
+      "sms_del": 0,
+      "sms_fail": 0,
+      "email": 27,
+      "call": 0,
+      "call_ans": 0,
+      "call_secs": 0
+     },
+     "a": {
+      "sms": 0,
+      "sms_del": 0,
+      "sms_fail": 0,
+      "email": 0,
+      "call": 0,
+      "call_ans": 0,
+      "call_secs": 0
+     }
+    },
+    "2026-10-26": {
+     "m": {
+      "sms": 0,
+      "sms_del": 0,
+      "sms_fail": 0,
+      "email": 17,
+      "call": 0,
+      "call_ans": 0,
+      "call_secs": 0
+     },
+     "a": {
+      "sms": 0,
+      "sms_del": 0,
+      "sms_fail": 0,
+      "email": 0,
+      "call": 0,
+      "call_ans": 0,
+      "call_secs": 0
+     }
+    },
+    "2026-10-03": {
+     "m": {
+      "sms": 0,
+      "sms_del": 0,
+      "sms_fail": 0,
+      "email": 44,
+      "call": 0,
+      "call_ans": 0,
+      "call_secs": 0
+     },
+     "a": {
+      "sms": 0,
+      "sms_del": 0,
+      "sms_fail": 0,
+      "email": 0,
+      "call": 0,
+      "call_ans": 0,
+      "call_secs": 0
+     }
+    },
+    "2026-09-07": {
+     "m": {
+      "sms": 0,
+      "sms_del": 0,
+      "sms_fail": 0,
+      "email": 50,
+      "call": 0,
+      "call_ans": 0,
+      "call_secs": 0
+     },
+     "a": {
+      "sms": 0,
+      "sms_del": 0,
+      "sms_fail": 0,
+      "email": 0,
+      "call": 0,
+      "call_ans": 0,
+      "call_secs": 0
+     }
+    },
+    "2026-09-04": {
+     "m": {
+      "sms": 0,
+      "sms_del": 0,
+      "sms_fail": 0,
+      "email": 110,
+      "call": 0,
+      "call_ans": 0,
+      "call_secs": 0
+     },
+     "a": {
+      "sms": 0,
+      "sms_del": 0,
+      "sms_fail": 0,
+      "email": 0,
+      "call": 0,
+      "call_ans": 0,
+      "call_secs": 0
+     }
+    },
+    "2026-09-01": {
+     "m": {
+      "sms": 0,
+      "sms_del": 0,
+      "sms_fail": 0,
+      "email": 21,
       "call": 0,
       "call_ans": 0,
       "call_secs": 0
@@ -4240,26 +2855,6 @@
       "call_secs": 0
      }
     },
-    "2026-09-23": {
-     "m": {
-      "sms": 0,
-      "sms_del": 0,
-      "sms_fail": 0,
-      "email": 27,
-      "call": 0,
-      "call_ans": 0,
-      "call_secs": 0
-     },
-     "a": {
-      "sms": 0,
-      "sms_del": 0,
-      "sms_fail": 0,
-      "email": 0,
-      "call": 0,
-      "call_ans": 0,
-      "call_secs": 0
-     }
-    },
     "2026-09-22": {
      "m": {
       "sms": 0,
@@ -4526,26 +3121,6 @@
       "sms_del": 0,
       "sms_fail": 0,
       "email": 47,
-      "call": 0,
-      "call_ans": 0,
-      "call_secs": 0
-     },
-     "a": {
-      "sms": 0,
-      "sms_del": 0,
-      "sms_fail": 0,
-      "email": 0,
-      "call": 0,
-      "call_ans": 0,
-      "call_secs": 0
-     }
-    },
-    "2026-10-26": {
-     "m": {
-      "sms": 0,
-      "sms_del": 0,
-      "sms_fail": 0,
-      "email": 17,
       "call": 0,
       "call_ans": 0,
       "call_secs": 0
@@ -6562,402 +5137,17 @@
     }
    }
   },
-  "yNFk8NAIlGgagfMbk7wU": {
-   "name": "Andrew Ostrowski",
-   "totals": {
-    "m": {
-     "sms": 26,
-     "sms_del": 25,
-     "sms_fail": 1,
-     "email": 0,
-     "call": 15,
-     "call_ans": 15,
-     "call_secs": 3595
-    },
-    "a": {
-     "sms": 0,
-     "sms_del": 0,
-     "sms_fail": 0,
-     "email": 0,
-     "call": 0,
-     "call_ans": 0,
-     "call_secs": 0
-    }
-   },
-   "by_day": {
-    "2026-10-26": {
-     "m": {
-      "sms": 0,
-      "sms_del": 0,
-      "sms_fail": 0,
-      "email": 0,
-      "call": 1,
-      "call_ans": 1,
-      "call_secs": 335
-     },
-     "a": {
-      "sms": 0,
-      "sms_del": 0,
-      "sms_fail": 0,
-      "email": 0,
-      "call": 0,
-      "call_ans": 0,
-      "call_secs": 0
-     }
-    },
-    "2026-10-20": {
-     "m": {
-      "sms": 1,
-      "sms_del": 0,
-      "sms_fail": 1,
-      "email": 0,
-      "call": 1,
-      "call_ans": 1,
-      "call_secs": 10
-     },
-     "a": {
-      "sms": 0,
-      "sms_del": 0,
-      "sms_fail": 0,
-      "email": 0,
-      "call": 0,
-      "call_ans": 0,
-      "call_secs": 0
-     }
-    },
-    "2026-09-13": {
-     "m": {
-      "sms": 3,
-      "sms_del": 3,
-      "sms_fail": 0,
-      "email": 0,
-      "call": 1,
-      "call_ans": 1,
-      "call_secs": 133
-     },
-     "a": {
-      "sms": 0,
-      "sms_del": 0,
-      "sms_fail": 0,
-      "email": 0,
-      "call": 0,
-      "call_ans": 0,
-      "call_secs": 0
-     }
-    },
-    "2026-10-07": {
-     "m": {
-      "sms": 2,
-      "sms_del": 2,
-      "sms_fail": 0,
-      "email": 0,
-      "call": 4,
-      "call_ans": 4,
-      "call_secs": 337
-     },
-     "a": {
-      "sms": 0,
-      "sms_del": 0,
-      "sms_fail": 0,
-      "email": 0,
-      "call": 0,
-      "call_ans": 0,
-      "call_secs": 0
-     }
-    },
-    "2026-08-14": {
-     "m": {
-      "sms": 2,
-      "sms_del": 2,
-      "sms_fail": 0,
-      "email": 0,
-      "call": 0,
-      "call_ans": 0,
-      "call_secs": 0
-     },
-     "a": {
-      "sms": 0,
-      "sms_del": 0,
-      "sms_fail": 0,
-      "email": 0,
-      "call": 0,
-      "call_ans": 0,
-      "call_secs": 0
-     }
-    },
-    "2026-08-12": {
-     "m": {
-      "sms": 6,
-      "sms_del": 6,
-      "sms_fail": 0,
-      "email": 0,
-      "call": 0,
-      "call_ans": 0,
-      "call_secs": 0
-     },
-     "a": {
-      "sms": 0,
-      "sms_del": 0,
-      "sms_fail": 0,
-      "email": 0,
-      "call": 0,
-      "call_ans": 0,
-      "call_secs": 0
-     }
-    },
-    "2026-09-12": {
-     "m": {
-      "sms": 2,
-      "sms_del": 2,
-      "sms_fail": 0,
-      "email": 0,
-      "call": 0,
-      "call_ans": 0,
-      "call_secs": 0
-     },
-     "a": {
-      "sms": 0,
-      "sms_del": 0,
-      "sms_fail": 0,
-      "email": 0,
-      "call": 0,
-      "call_ans": 0,
-      "call_secs": 0
-     }
-    },
-    "2026-09-08": {
-     "m": {
-      "sms": 3,
-      "sms_del": 3,
-      "sms_fail": 0,
-      "email": 0,
-      "call": 0,
-      "call_ans": 0,
-      "call_secs": 0
-     },
-     "a": {
-      "sms": 0,
-      "sms_del": 0,
-      "sms_fail": 0,
-      "email": 0,
-      "call": 0,
-      "call_ans": 0,
-      "call_secs": 0
-     }
-    },
-    "2026-09-05": {
-     "m": {
-      "sms": 0,
-      "sms_del": 0,
-      "sms_fail": 0,
-      "email": 0,
-      "call": 2,
-      "call_ans": 2,
-      "call_secs": 78
-     },
-     "a": {
-      "sms": 0,
-      "sms_del": 0,
-      "sms_fail": 0,
-      "email": 0,
-      "call": 0,
-      "call_ans": 0,
-      "call_secs": 0
-     }
-    },
-    "2026-08-28": {
-     "m": {
-      "sms": 1,
-      "sms_del": 1,
-      "sms_fail": 0,
-      "email": 0,
-      "call": 0,
-      "call_ans": 0,
-      "call_secs": 0
-     },
-     "a": {
-      "sms": 0,
-      "sms_del": 0,
-      "sms_fail": 0,
-      "email": 0,
-      "call": 0,
-      "call_ans": 0,
-      "call_secs": 0
-     }
-    },
-    "2026-08-20": {
-     "m": {
-      "sms": 0,
-      "sms_del": 0,
-      "sms_fail": 0,
-      "email": 0,
-      "call": 1,
-      "call_ans": 1,
-      "call_secs": 443
-     },
-     "a": {
-      "sms": 0,
-      "sms_del": 0,
-      "sms_fail": 0,
-      "email": 0,
-      "call": 0,
-      "call_ans": 0,
-      "call_secs": 0
-     }
-    },
-    "2026-08-06": {
-     "m": {
-      "sms": 2,
-      "sms_del": 2,
-      "sms_fail": 0,
-      "email": 0,
-      "call": 1,
-      "call_ans": 1,
-      "call_secs": 634
-     },
-     "a": {
-      "sms": 0,
-      "sms_del": 0,
-      "sms_fail": 0,
-      "email": 0,
-      "call": 0,
-      "call_ans": 0,
-      "call_secs": 0
-     }
-    },
-    "2026-07-14": {
-     "m": {
-      "sms": 0,
-      "sms_del": 0,
-      "sms_fail": 0,
-      "email": 0,
-      "call": 1,
-      "call_ans": 1,
-      "call_secs": 148
-     },
-     "a": {
-      "sms": 0,
-      "sms_del": 0,
-      "sms_fail": 0,
-      "email": 0,
-      "call": 0,
-      "call_ans": 0,
-      "call_secs": 0
-     }
-    },
-    "2026-06-28": {
-     "m": {
-      "sms": 2,
-      "sms_del": 2,
-      "sms_fail": 0,
-      "email": 0,
-      "call": 0,
-      "call_ans": 0,
-      "call_secs": 0
-     },
-     "a": {
-      "sms": 0,
-      "sms_del": 0,
-      "sms_fail": 0,
-      "email": 0,
-      "call": 0,
-      "call_ans": 0,
-      "call_secs": 0
-     }
-    },
-    "2026-06-24": {
-     "m": {
-      "sms": 0,
-      "sms_del": 0,
-      "sms_fail": 0,
-      "email": 0,
-      "call": 1,
-      "call_ans": 1,
-      "call_secs": 1117
-     },
-     "a": {
-      "sms": 0,
-      "sms_del": 0,
-      "sms_fail": 0,
-      "email": 0,
-      "call": 0,
-      "call_ans": 0,
-      "call_secs": 0
-     }
-    },
-    "2026-06-23": {
-     "m": {
-      "sms": 1,
-      "sms_del": 1,
-      "sms_fail": 0,
-      "email": 0,
-      "call": 1,
-      "call_ans": 1,
-      "call_secs": 163
-     },
-     "a": {
-      "sms": 0,
-      "sms_del": 0,
-      "sms_fail": 0,
-      "email": 0,
-      "call": 0,
-      "call_ans": 0,
-      "call_secs": 0
-     }
-    },
-    "2026-06-21": {
-     "m": {
-      "sms": 1,
-      "sms_del": 1,
-      "sms_fail": 0,
-      "email": 0,
-      "call": 0,
-      "call_ans": 0,
-      "call_secs": 0
-     },
-     "a": {
-      "sms": 0,
-      "sms_del": 0,
-      "sms_fail": 0,
-      "email": 0,
-      "call": 0,
-      "call_ans": 0,
-      "call_secs": 0
-     }
-    },
-    "2026-06-19": {
-     "m": {
-      "sms": 0,
-      "sms_del": 0,
-      "sms_fail": 0,
-      "email": 0,
-      "call": 1,
-      "call_ans": 1,
-      "call_secs": 197
-     },
-     "a": {
-      "sms": 0,
-      "sms_del": 0,
-      "sms_fail": 0,
-      "email": 0,
-      "call": 0,
-      "call_ans": 0,
-      "call_secs": 0
-     }
-    }
-   }
-  },
   "bQI1XlzuGb6uMTxEqtCR": {
    "name": "Charity Byars",
    "totals": {
     "m": {
-     "sms": 2861,
-     "sms_del": 2796,
-     "sms_fail": 65,
-     "email": 288,
-     "call": 829,
-     "call_ans": 806,
-     "call_secs": 81950
+     "sms": 2875,
+     "sms_del": 2809,
+     "sms_fail": 66,
+     "email": 304,
+     "call": 831,
+     "call_ans": 808,
+     "call_secs": 82817
     },
     "a": {
      "sms": 0,
@@ -6970,26 +5160,6 @@
     }
    },
    "by_day": {
-    "2026-10-20": {
-     "m": {
-      "sms": 22,
-      "sms_del": 21,
-      "sms_fail": 1,
-      "email": 6,
-      "call": 16,
-      "call_ans": 16,
-      "call_secs": 3788
-     },
-     "a": {
-      "sms": 0,
-      "sms_del": 0,
-      "sms_fail": 0,
-      "email": 0,
-      "call": 0,
-      "call_ans": 0,
-      "call_secs": 0
-     }
-    },
     "2026-10-28": {
      "m": {
       "sms": 9,
@@ -7070,15 +5240,35 @@
       "call_secs": 0
      }
     },
-    "2026-10-09": {
+    "2026-10-29": {
      "m": {
-      "sms": 26,
-      "sms_del": 26,
+      "sms": 14,
+      "sms_del": 14,
       "sms_fail": 0,
-      "email": 4,
-      "call": 3,
-      "call_ans": 3,
-      "call_secs": 740
+      "email": 16,
+      "call": 2,
+      "call_ans": 2,
+      "call_secs": 867
+     },
+     "a": {
+      "sms": 0,
+      "sms_del": 0,
+      "sms_fail": 0,
+      "email": 0,
+      "call": 0,
+      "call_ans": 0,
+      "call_secs": 0
+     }
+    },
+    "2026-09-29": {
+     "m": {
+      "sms": 38,
+      "sms_del": 37,
+      "sms_fail": 1,
+      "email": 12,
+      "call": 5,
+      "call_ans": 5,
+      "call_secs": 965
      },
      "a": {
       "sms": 0,
@@ -7110,15 +5300,35 @@
       "call_secs": 0
      }
     },
-    "2026-10-13": {
+    "2026-09-27": {
      "m": {
-      "sms": 23,
-      "sms_del": 23,
-      "sms_fail": 0,
-      "email": 4,
+      "sms": 16,
+      "sms_del": 15,
+      "sms_fail": 1,
+      "email": 6,
       "call": 2,
       "call_ans": 2,
-      "call_secs": 473
+      "call_secs": 242
+     },
+     "a": {
+      "sms": 0,
+      "sms_del": 0,
+      "sms_fail": 0,
+      "email": 0,
+      "call": 0,
+      "call_ans": 0,
+      "call_secs": 0
+     }
+    },
+    "2026-10-26": {
+     "m": {
+      "sms": 17,
+      "sms_del": 15,
+      "sms_fail": 2,
+      "email": 2,
+      "call": 0,
+      "call_ans": 0,
+      "call_secs": 0
      },
      "a": {
       "sms": 0,
@@ -7150,15 +5360,15 @@
       "call_secs": 0
      }
     },
-    "2026-09-30": {
+    "2026-09-17": {
      "m": {
-      "sms": 11,
-      "sms_del": 9,
-      "sms_fail": 2,
-      "email": 7,
-      "call": 5,
-      "call_ans": 5,
-      "call_secs": 404
+      "sms": 18,
+      "sms_del": 18,
+      "sms_fail": 0,
+      "email": 4,
+      "call": 27,
+      "call_ans": 25,
+      "call_secs": 3490
      },
      "a": {
       "sms": 0,
@@ -7230,15 +5440,35 @@
       "call_secs": 0
      }
     },
-    "2026-10-26": {
+    "2026-09-30": {
      "m": {
-      "sms": 17,
-      "sms_del": 16,
-      "sms_fail": 1,
-      "email": 2,
+      "sms": 11,
+      "sms_del": 9,
+      "sms_fail": 2,
+      "email": 7,
+      "call": 5,
+      "call_ans": 5,
+      "call_secs": 404
+     },
+     "a": {
+      "sms": 0,
+      "sms_del": 0,
+      "sms_fail": 0,
+      "email": 0,
       "call": 0,
       "call_ans": 0,
       "call_secs": 0
+     }
+    },
+    "2026-10-20": {
+     "m": {
+      "sms": 22,
+      "sms_del": 21,
+      "sms_fail": 1,
+      "email": 6,
+      "call": 16,
+      "call_ans": 16,
+      "call_secs": 3788
      },
      "a": {
       "sms": 0,
@@ -7270,35 +5500,15 @@
       "call_secs": 0
      }
     },
-    "2026-09-29": {
+    "2026-10-09": {
      "m": {
-      "sms": 38,
-      "sms_del": 37,
-      "sms_fail": 1,
-      "email": 12,
-      "call": 5,
-      "call_ans": 5,
-      "call_secs": 965
-     },
-     "a": {
-      "sms": 0,
-      "sms_del": 0,
-      "sms_fail": 0,
-      "email": 0,
-      "call": 0,
-      "call_ans": 0,
-      "call_secs": 0
-     }
-    },
-    "2026-09-17": {
-     "m": {
-      "sms": 18,
-      "sms_del": 18,
+      "sms": 26,
+      "sms_del": 26,
       "sms_fail": 0,
       "email": 4,
-      "call": 27,
-      "call_ans": 25,
-      "call_secs": 3490
+      "call": 3,
+      "call_ans": 3,
+      "call_secs": 740
      },
      "a": {
       "sms": 0,
@@ -7310,15 +5520,15 @@
       "call_secs": 0
      }
     },
-    "2026-09-27": {
+    "2026-10-13": {
      "m": {
-      "sms": 16,
-      "sms_del": 15,
-      "sms_fail": 1,
-      "email": 6,
+      "sms": 23,
+      "sms_del": 23,
+      "sms_fail": 0,
+      "email": 4,
       "call": 2,
       "call_ans": 2,
-      "call_secs": 242
+      "call_secs": 473
      },
      "a": {
       "sms": 0,
@@ -8975,26 +7185,6 @@
     }
    },
    "by_day": {
-    "2026-09-04": {
-     "m": {
-      "sms": 26,
-      "sms_del": 25,
-      "sms_fail": 1,
-      "email": 1,
-      "call": 13,
-      "call_ans": 12,
-      "call_secs": 1420
-     },
-     "a": {
-      "sms": 0,
-      "sms_del": 0,
-      "sms_fail": 0,
-      "email": 0,
-      "call": 0,
-      "call_ans": 0,
-      "call_secs": 0
-     }
-    },
     "2026-09-15": {
      "m": {
       "sms": 4,
@@ -9084,6 +7274,26 @@
       "call": 15,
       "call_ans": 15,
       "call_secs": 1843
+     },
+     "a": {
+      "sms": 0,
+      "sms_del": 0,
+      "sms_fail": 0,
+      "email": 0,
+      "call": 0,
+      "call_ans": 0,
+      "call_secs": 0
+     }
+    },
+    "2026-09-04": {
+     "m": {
+      "sms": 26,
+      "sms_del": 25,
+      "sms_fail": 1,
+      "email": 1,
+      "call": 13,
+      "call_ans": 12,
+      "call_secs": 1420
      },
      "a": {
       "sms": 0,
@@ -11024,6 +9234,1856 @@
       "call": 1,
       "call_ans": 1,
       "call_secs": 0
+     },
+     "a": {
+      "sms": 0,
+      "sms_del": 0,
+      "sms_fail": 0,
+      "email": 0,
+      "call": 0,
+      "call_ans": 0,
+      "call_secs": 0
+     }
+    }
+   }
+  },
+  "yNFk8NAIlGgagfMbk7wU": {
+   "name": "Andrew Ostrowski",
+   "totals": {
+    "m": {
+     "sms": 26,
+     "sms_del": 25,
+     "sms_fail": 1,
+     "email": 0,
+     "call": 15,
+     "call_ans": 15,
+     "call_secs": 3595
+    },
+    "a": {
+     "sms": 0,
+     "sms_del": 0,
+     "sms_fail": 0,
+     "email": 0,
+     "call": 0,
+     "call_ans": 0,
+     "call_secs": 0
+    }
+   },
+   "by_day": {
+    "2026-09-13": {
+     "m": {
+      "sms": 3,
+      "sms_del": 3,
+      "sms_fail": 0,
+      "email": 0,
+      "call": 1,
+      "call_ans": 1,
+      "call_secs": 133
+     },
+     "a": {
+      "sms": 0,
+      "sms_del": 0,
+      "sms_fail": 0,
+      "email": 0,
+      "call": 0,
+      "call_ans": 0,
+      "call_secs": 0
+     }
+    },
+    "2026-10-26": {
+     "m": {
+      "sms": 0,
+      "sms_del": 0,
+      "sms_fail": 0,
+      "email": 0,
+      "call": 1,
+      "call_ans": 1,
+      "call_secs": 335
+     },
+     "a": {
+      "sms": 0,
+      "sms_del": 0,
+      "sms_fail": 0,
+      "email": 0,
+      "call": 0,
+      "call_ans": 0,
+      "call_secs": 0
+     }
+    },
+    "2026-10-20": {
+     "m": {
+      "sms": 1,
+      "sms_del": 0,
+      "sms_fail": 1,
+      "email": 0,
+      "call": 1,
+      "call_ans": 1,
+      "call_secs": 10
+     },
+     "a": {
+      "sms": 0,
+      "sms_del": 0,
+      "sms_fail": 0,
+      "email": 0,
+      "call": 0,
+      "call_ans": 0,
+      "call_secs": 0
+     }
+    },
+    "2026-10-07": {
+     "m": {
+      "sms": 2,
+      "sms_del": 2,
+      "sms_fail": 0,
+      "email": 0,
+      "call": 4,
+      "call_ans": 4,
+      "call_secs": 337
+     },
+     "a": {
+      "sms": 0,
+      "sms_del": 0,
+      "sms_fail": 0,
+      "email": 0,
+      "call": 0,
+      "call_ans": 0,
+      "call_secs": 0
+     }
+    },
+    "2026-08-14": {
+     "m": {
+      "sms": 2,
+      "sms_del": 2,
+      "sms_fail": 0,
+      "email": 0,
+      "call": 0,
+      "call_ans": 0,
+      "call_secs": 0
+     },
+     "a": {
+      "sms": 0,
+      "sms_del": 0,
+      "sms_fail": 0,
+      "email": 0,
+      "call": 0,
+      "call_ans": 0,
+      "call_secs": 0
+     }
+    },
+    "2026-08-12": {
+     "m": {
+      "sms": 6,
+      "sms_del": 6,
+      "sms_fail": 0,
+      "email": 0,
+      "call": 0,
+      "call_ans": 0,
+      "call_secs": 0
+     },
+     "a": {
+      "sms": 0,
+      "sms_del": 0,
+      "sms_fail": 0,
+      "email": 0,
+      "call": 0,
+      "call_ans": 0,
+      "call_secs": 0
+     }
+    },
+    "2026-09-12": {
+     "m": {
+      "sms": 2,
+      "sms_del": 2,
+      "sms_fail": 0,
+      "email": 0,
+      "call": 0,
+      "call_ans": 0,
+      "call_secs": 0
+     },
+     "a": {
+      "sms": 0,
+      "sms_del": 0,
+      "sms_fail": 0,
+      "email": 0,
+      "call": 0,
+      "call_ans": 0,
+      "call_secs": 0
+     }
+    },
+    "2026-09-08": {
+     "m": {
+      "sms": 3,
+      "sms_del": 3,
+      "sms_fail": 0,
+      "email": 0,
+      "call": 0,
+      "call_ans": 0,
+      "call_secs": 0
+     },
+     "a": {
+      "sms": 0,
+      "sms_del": 0,
+      "sms_fail": 0,
+      "email": 0,
+      "call": 0,
+      "call_ans": 0,
+      "call_secs": 0
+     }
+    },
+    "2026-09-05": {
+     "m": {
+      "sms": 0,
+      "sms_del": 0,
+      "sms_fail": 0,
+      "email": 0,
+      "call": 2,
+      "call_ans": 2,
+      "call_secs": 78
+     },
+     "a": {
+      "sms": 0,
+      "sms_del": 0,
+      "sms_fail": 0,
+      "email": 0,
+      "call": 0,
+      "call_ans": 0,
+      "call_secs": 0
+     }
+    },
+    "2026-08-28": {
+     "m": {
+      "sms": 1,
+      "sms_del": 1,
+      "sms_fail": 0,
+      "email": 0,
+      "call": 0,
+      "call_ans": 0,
+      "call_secs": 0
+     },
+     "a": {
+      "sms": 0,
+      "sms_del": 0,
+      "sms_fail": 0,
+      "email": 0,
+      "call": 0,
+      "call_ans": 0,
+      "call_secs": 0
+     }
+    },
+    "2026-08-20": {
+     "m": {
+      "sms": 0,
+      "sms_del": 0,
+      "sms_fail": 0,
+      "email": 0,
+      "call": 1,
+      "call_ans": 1,
+      "call_secs": 443
+     },
+     "a": {
+      "sms": 0,
+      "sms_del": 0,
+      "sms_fail": 0,
+      "email": 0,
+      "call": 0,
+      "call_ans": 0,
+      "call_secs": 0
+     }
+    },
+    "2026-08-06": {
+     "m": {
+      "sms": 2,
+      "sms_del": 2,
+      "sms_fail": 0,
+      "email": 0,
+      "call": 1,
+      "call_ans": 1,
+      "call_secs": 634
+     },
+     "a": {
+      "sms": 0,
+      "sms_del": 0,
+      "sms_fail": 0,
+      "email": 0,
+      "call": 0,
+      "call_ans": 0,
+      "call_secs": 0
+     }
+    },
+    "2026-07-14": {
+     "m": {
+      "sms": 0,
+      "sms_del": 0,
+      "sms_fail": 0,
+      "email": 0,
+      "call": 1,
+      "call_ans": 1,
+      "call_secs": 148
+     },
+     "a": {
+      "sms": 0,
+      "sms_del": 0,
+      "sms_fail": 0,
+      "email": 0,
+      "call": 0,
+      "call_ans": 0,
+      "call_secs": 0
+     }
+    },
+    "2026-06-28": {
+     "m": {
+      "sms": 2,
+      "sms_del": 2,
+      "sms_fail": 0,
+      "email": 0,
+      "call": 0,
+      "call_ans": 0,
+      "call_secs": 0
+     },
+     "a": {
+      "sms": 0,
+      "sms_del": 0,
+      "sms_fail": 0,
+      "email": 0,
+      "call": 0,
+      "call_ans": 0,
+      "call_secs": 0
+     }
+    },
+    "2026-06-24": {
+     "m": {
+      "sms": 0,
+      "sms_del": 0,
+      "sms_fail": 0,
+      "email": 0,
+      "call": 1,
+      "call_ans": 1,
+      "call_secs": 1117
+     },
+     "a": {
+      "sms": 0,
+      "sms_del": 0,
+      "sms_fail": 0,
+      "email": 0,
+      "call": 0,
+      "call_ans": 0,
+      "call_secs": 0
+     }
+    },
+    "2026-06-23": {
+     "m": {
+      "sms": 1,
+      "sms_del": 1,
+      "sms_fail": 0,
+      "email": 0,
+      "call": 1,
+      "call_ans": 1,
+      "call_secs": 163
+     },
+     "a": {
+      "sms": 0,
+      "sms_del": 0,
+      "sms_fail": 0,
+      "email": 0,
+      "call": 0,
+      "call_ans": 0,
+      "call_secs": 0
+     }
+    },
+    "2026-06-21": {
+     "m": {
+      "sms": 1,
+      "sms_del": 1,
+      "sms_fail": 0,
+      "email": 0,
+      "call": 0,
+      "call_ans": 0,
+      "call_secs": 0
+     },
+     "a": {
+      "sms": 0,
+      "sms_del": 0,
+      "sms_fail": 0,
+      "email": 0,
+      "call": 0,
+      "call_ans": 0,
+      "call_secs": 0
+     }
+    },
+    "2026-06-19": {
+     "m": {
+      "sms": 0,
+      "sms_del": 0,
+      "sms_fail": 0,
+      "email": 0,
+      "call": 1,
+      "call_ans": 1,
+      "call_secs": 197
+     },
+     "a": {
+      "sms": 0,
+      "sms_del": 0,
+      "sms_fail": 0,
+      "email": 0,
+      "call": 0,
+      "call_ans": 0,
+      "call_secs": 0
+     }
+    }
+   }
+  },
+  "xLxKq3g1OO9GLCYioRQg": {
+   "name": "Erin Nicholson",
+   "totals": {
+    "m": {
+     "sms": 2863,
+     "sms_del": 2825,
+     "sms_fail": 38,
+     "email": 43,
+     "call": 721,
+     "call_ans": 680,
+     "call_secs": 56923
+    },
+    "a": {
+     "sms": 0,
+     "sms_del": 0,
+     "sms_fail": 0,
+     "email": 0,
+     "call": 0,
+     "call_ans": 0,
+     "call_secs": 0
+    }
+   },
+   "by_day": {
+    "2026-10-26": {
+     "m": {
+      "sms": 18,
+      "sms_del": 18,
+      "sms_fail": 0,
+      "email": 0,
+      "call": 7,
+      "call_ans": 7,
+      "call_secs": 415
+     },
+     "a": {
+      "sms": 0,
+      "sms_del": 0,
+      "sms_fail": 0,
+      "email": 0,
+      "call": 0,
+      "call_ans": 0,
+      "call_secs": 0
+     }
+    },
+    "2026-10-04": {
+     "m": {
+      "sms": 17,
+      "sms_del": 17,
+      "sms_fail": 0,
+      "email": 0,
+      "call": 5,
+      "call_ans": 5,
+      "call_secs": 396
+     },
+     "a": {
+      "sms": 0,
+      "sms_del": 0,
+      "sms_fail": 0,
+      "email": 0,
+      "call": 0,
+      "call_ans": 0,
+      "call_secs": 0
+     }
+    },
+    "2026-10-25": {
+     "m": {
+      "sms": 33,
+      "sms_del": 33,
+      "sms_fail": 0,
+      "email": 0,
+      "call": 20,
+      "call_ans": 18,
+      "call_secs": 2410
+     },
+     "a": {
+      "sms": 0,
+      "sms_del": 0,
+      "sms_fail": 0,
+      "email": 0,
+      "call": 0,
+      "call_ans": 0,
+      "call_secs": 0
+     }
+    },
+    "2026-10-10": {
+     "m": {
+      "sms": 41,
+      "sms_del": 39,
+      "sms_fail": 2,
+      "email": 1,
+      "call": 19,
+      "call_ans": 19,
+      "call_secs": 1138
+     },
+     "a": {
+      "sms": 0,
+      "sms_del": 0,
+      "sms_fail": 0,
+      "email": 0,
+      "call": 0,
+      "call_ans": 0,
+      "call_secs": 0
+     }
+    },
+    "2026-10-19": {
+     "m": {
+      "sms": 8,
+      "sms_del": 6,
+      "sms_fail": 2,
+      "email": 1,
+      "call": 9,
+      "call_ans": 9,
+      "call_secs": 782
+     },
+     "a": {
+      "sms": 0,
+      "sms_del": 0,
+      "sms_fail": 0,
+      "email": 0,
+      "call": 0,
+      "call_ans": 0,
+      "call_secs": 0
+     }
+    },
+    "2026-10-11": {
+     "m": {
+      "sms": 16,
+      "sms_del": 16,
+      "sms_fail": 0,
+      "email": 2,
+      "call": 8,
+      "call_ans": 8,
+      "call_secs": 678
+     },
+     "a": {
+      "sms": 0,
+      "sms_del": 0,
+      "sms_fail": 0,
+      "email": 0,
+      "call": 0,
+      "call_ans": 0,
+      "call_secs": 0
+     }
+    },
+    "2026-09-21": {
+     "m": {
+      "sms": 58,
+      "sms_del": 57,
+      "sms_fail": 1,
+      "email": 2,
+      "call": 6,
+      "call_ans": 6,
+      "call_secs": 104
+     },
+     "a": {
+      "sms": 0,
+      "sms_del": 0,
+      "sms_fail": 0,
+      "email": 0,
+      "call": 0,
+      "call_ans": 0,
+      "call_secs": 0
+     }
+    },
+    "2026-06-21": {
+     "m": {
+      "sms": 45,
+      "sms_del": 44,
+      "sms_fail": 1,
+      "email": 1,
+      "call": 11,
+      "call_ans": 11,
+      "call_secs": 427
+     },
+     "a": {
+      "sms": 0,
+      "sms_del": 0,
+      "sms_fail": 0,
+      "email": 0,
+      "call": 0,
+      "call_ans": 0,
+      "call_secs": 0
+     }
+    },
+    "2026-09-20": {
+     "m": {
+      "sms": 31,
+      "sms_del": 31,
+      "sms_fail": 0,
+      "email": 0,
+      "call": 20,
+      "call_ans": 20,
+      "call_secs": 1095
+     },
+     "a": {
+      "sms": 0,
+      "sms_del": 0,
+      "sms_fail": 0,
+      "email": 0,
+      "call": 0,
+      "call_ans": 0,
+      "call_secs": 0
+     }
+    },
+    "2026-10-12": {
+     "m": {
+      "sms": 44,
+      "sms_del": 44,
+      "sms_fail": 0,
+      "email": 1,
+      "call": 20,
+      "call_ans": 20,
+      "call_secs": 2728
+     },
+     "a": {
+      "sms": 0,
+      "sms_del": 0,
+      "sms_fail": 0,
+      "email": 0,
+      "call": 0,
+      "call_ans": 0,
+      "call_secs": 0
+     }
+    },
+    "2026-10-18": {
+     "m": {
+      "sms": 39,
+      "sms_del": 39,
+      "sms_fail": 0,
+      "email": 2,
+      "call": 8,
+      "call_ans": 8,
+      "call_secs": 1218
+     },
+     "a": {
+      "sms": 0,
+      "sms_del": 0,
+      "sms_fail": 0,
+      "email": 0,
+      "call": 0,
+      "call_ans": 0,
+      "call_secs": 0
+     }
+    },
+    "2026-09-28": {
+     "m": {
+      "sms": 40,
+      "sms_del": 38,
+      "sms_fail": 2,
+      "email": 2,
+      "call": 21,
+      "call_ans": 19,
+      "call_secs": 2302
+     },
+     "a": {
+      "sms": 0,
+      "sms_del": 0,
+      "sms_fail": 0,
+      "email": 0,
+      "call": 0,
+      "call_ans": 0,
+      "call_secs": 0
+     }
+    },
+    "2026-10-03": {
+     "m": {
+      "sms": 28,
+      "sms_del": 28,
+      "sms_fail": 0,
+      "email": 0,
+      "call": 9,
+      "call_ans": 9,
+      "call_secs": 812
+     },
+     "a": {
+      "sms": 0,
+      "sms_del": 0,
+      "sms_fail": 0,
+      "email": 0,
+      "call": 0,
+      "call_ans": 0,
+      "call_secs": 0
+     }
+    },
+    "2026-08-23": {
+     "m": {
+      "sms": 29,
+      "sms_del": 29,
+      "sms_fail": 0,
+      "email": 0,
+      "call": 8,
+      "call_ans": 8,
+      "call_secs": 743
+     },
+     "a": {
+      "sms": 0,
+      "sms_del": 0,
+      "sms_fail": 0,
+      "email": 0,
+      "call": 0,
+      "call_ans": 0,
+      "call_secs": 0
+     }
+    },
+    "2026-08-03": {
+     "m": {
+      "sms": 40,
+      "sms_del": 38,
+      "sms_fail": 2,
+      "email": 0,
+      "call": 15,
+      "call_ans": 15,
+      "call_secs": 708
+     },
+     "a": {
+      "sms": 0,
+      "sms_del": 0,
+      "sms_fail": 0,
+      "email": 0,
+      "call": 0,
+      "call_ans": 0,
+      "call_secs": 0
+     }
+    },
+    "2026-07-19": {
+     "m": {
+      "sms": 66,
+      "sms_del": 66,
+      "sms_fail": 0,
+      "email": 1,
+      "call": 10,
+      "call_ans": 10,
+      "call_secs": 1535
+     },
+     "a": {
+      "sms": 0,
+      "sms_del": 0,
+      "sms_fail": 0,
+      "email": 0,
+      "call": 0,
+      "call_ans": 0,
+      "call_secs": 0
+     }
+    },
+    "2026-08-04": {
+     "m": {
+      "sms": 46,
+      "sms_del": 46,
+      "sms_fail": 0,
+      "email": 1,
+      "call": 8,
+      "call_ans": 8,
+      "call_secs": 1120
+     },
+     "a": {
+      "sms": 0,
+      "sms_del": 0,
+      "sms_fail": 0,
+      "email": 0,
+      "call": 0,
+      "call_ans": 0,
+      "call_secs": 0
+     }
+    },
+    "2026-10-05": {
+     "m": {
+      "sms": 34,
+      "sms_del": 34,
+      "sms_fail": 0,
+      "email": 1,
+      "call": 13,
+      "call_ans": 10,
+      "call_secs": 1146
+     },
+     "a": {
+      "sms": 0,
+      "sms_del": 0,
+      "sms_fail": 0,
+      "email": 0,
+      "call": 0,
+      "call_ans": 0,
+      "call_secs": 0
+     }
+    },
+    "2026-07-04": {
+     "m": {
+      "sms": 150,
+      "sms_del": 147,
+      "sms_fail": 3,
+      "email": 0,
+      "call": 14,
+      "call_ans": 14,
+      "call_secs": 849
+     },
+     "a": {
+      "sms": 0,
+      "sms_del": 0,
+      "sms_fail": 0,
+      "email": 0,
+      "call": 0,
+      "call_ans": 0,
+      "call_secs": 0
+     }
+    },
+    "2026-10-17": {
+     "m": {
+      "sms": 41,
+      "sms_del": 41,
+      "sms_fail": 0,
+      "email": 0,
+      "call": 12,
+      "call_ans": 12,
+      "call_secs": 940
+     },
+     "a": {
+      "sms": 0,
+      "sms_del": 0,
+      "sms_fail": 0,
+      "email": 0,
+      "call": 0,
+      "call_ans": 0,
+      "call_secs": 0
+     }
+    },
+    "2026-08-31": {
+     "m": {
+      "sms": 9,
+      "sms_del": 9,
+      "sms_fail": 0,
+      "email": 3,
+      "call": 13,
+      "call_ans": 13,
+      "call_secs": 1984
+     },
+     "a": {
+      "sms": 0,
+      "sms_del": 0,
+      "sms_fail": 0,
+      "email": 0,
+      "call": 0,
+      "call_ans": 0,
+      "call_secs": 0
+     }
+    },
+    "2026-09-27": {
+     "m": {
+      "sms": 70,
+      "sms_del": 70,
+      "sms_fail": 0,
+      "email": 0,
+      "call": 19,
+      "call_ans": 19,
+      "call_secs": 1193
+     },
+     "a": {
+      "sms": 0,
+      "sms_del": 0,
+      "sms_fail": 0,
+      "email": 0,
+      "call": 0,
+      "call_ans": 0,
+      "call_secs": 0
+     }
+    },
+    "2026-08-16": {
+     "m": {
+      "sms": 109,
+      "sms_del": 107,
+      "sms_fail": 2,
+      "email": 1,
+      "call": 19,
+      "call_ans": 19,
+      "call_secs": 1078
+     },
+     "a": {
+      "sms": 0,
+      "sms_del": 0,
+      "sms_fail": 0,
+      "email": 0,
+      "call": 0,
+      "call_ans": 0,
+      "call_secs": 0
+     }
+    },
+    "2026-09-26": {
+     "m": {
+      "sms": 38,
+      "sms_del": 38,
+      "sms_fail": 0,
+      "email": 1,
+      "call": 10,
+      "call_ans": 8,
+      "call_secs": 972
+     },
+     "a": {
+      "sms": 0,
+      "sms_del": 0,
+      "sms_fail": 0,
+      "email": 0,
+      "call": 0,
+      "call_ans": 0,
+      "call_secs": 0
+     }
+    },
+    "2026-08-24": {
+     "m": {
+      "sms": 66,
+      "sms_del": 61,
+      "sms_fail": 5,
+      "email": 4,
+      "call": 29,
+      "call_ans": 25,
+      "call_secs": 1560
+     },
+     "a": {
+      "sms": 0,
+      "sms_del": 0,
+      "sms_fail": 0,
+      "email": 0,
+      "call": 0,
+      "call_ans": 0,
+      "call_secs": 0
+     }
+    },
+    "2026-09-13": {
+     "m": {
+      "sms": 48,
+      "sms_del": 48,
+      "sms_fail": 0,
+      "email": 6,
+      "call": 18,
+      "call_ans": 18,
+      "call_secs": 1124
+     },
+     "a": {
+      "sms": 0,
+      "sms_del": 0,
+      "sms_fail": 0,
+      "email": 0,
+      "call": 0,
+      "call_ans": 0,
+      "call_secs": 0
+     }
+    },
+    "2026-07-16": {
+     "m": {
+      "sms": 4,
+      "sms_del": 4,
+      "sms_fail": 0,
+      "email": 0,
+      "call": 0,
+      "call_ans": 0,
+      "call_secs": 0
+     },
+     "a": {
+      "sms": 0,
+      "sms_del": 0,
+      "sms_fail": 0,
+      "email": 0,
+      "call": 0,
+      "call_ans": 0,
+      "call_secs": 0
+     }
+    },
+    "2026-08-17": {
+     "m": {
+      "sms": 43,
+      "sms_del": 43,
+      "sms_fail": 0,
+      "email": 1,
+      "call": 22,
+      "call_ans": 18,
+      "call_secs": 1746
+     },
+     "a": {
+      "sms": 0,
+      "sms_del": 0,
+      "sms_fail": 0,
+      "email": 0,
+      "call": 0,
+      "call_ans": 0,
+      "call_secs": 0
+     }
+    },
+    "2026-09-05": {
+     "m": {
+      "sms": 105,
+      "sms_del": 105,
+      "sms_fail": 0,
+      "email": 0,
+      "call": 21,
+      "call_ans": 21,
+      "call_secs": 1356
+     },
+     "a": {
+      "sms": 0,
+      "sms_del": 0,
+      "sms_fail": 0,
+      "email": 0,
+      "call": 0,
+      "call_ans": 0,
+      "call_secs": 0
+     }
+    },
+    "2026-09-14": {
+     "m": {
+      "sms": 38,
+      "sms_del": 34,
+      "sms_fail": 4,
+      "email": 1,
+      "call": 14,
+      "call_ans": 13,
+      "call_secs": 2102
+     },
+     "a": {
+      "sms": 0,
+      "sms_del": 0,
+      "sms_fail": 0,
+      "email": 0,
+      "call": 0,
+      "call_ans": 0,
+      "call_secs": 0
+     }
+    },
+    "2026-09-12": {
+     "m": {
+      "sms": 46,
+      "sms_del": 46,
+      "sms_fail": 0,
+      "email": 0,
+      "call": 21,
+      "call_ans": 21,
+      "call_secs": 1789
+     },
+     "a": {
+      "sms": 0,
+      "sms_del": 0,
+      "sms_fail": 0,
+      "email": 0,
+      "call": 0,
+      "call_ans": 0,
+      "call_secs": 0
+     }
+    },
+    "2026-07-26": {
+     "m": {
+      "sms": 132,
+      "sms_del": 130,
+      "sms_fail": 2,
+      "email": 0,
+      "call": 32,
+      "call_ans": 31,
+      "call_secs": 2346
+     },
+     "a": {
+      "sms": 0,
+      "sms_del": 0,
+      "sms_fail": 0,
+      "email": 0,
+      "call": 0,
+      "call_ans": 0,
+      "call_secs": 0
+     }
+    },
+    "2026-09-06": {
+     "m": {
+      "sms": 190,
+      "sms_del": 186,
+      "sms_fail": 4,
+      "email": 2,
+      "call": 23,
+      "call_ans": 20,
+      "call_secs": 2803
+     },
+     "a": {
+      "sms": 0,
+      "sms_del": 0,
+      "sms_fail": 0,
+      "email": 0,
+      "call": 0,
+      "call_ans": 0,
+      "call_secs": 0
+     }
+    },
+    "2026-08-10": {
+     "m": {
+      "sms": 37,
+      "sms_del": 37,
+      "sms_fail": 0,
+      "email": 1,
+      "call": 13,
+      "call_ans": 13,
+      "call_secs": 1011
+     },
+     "a": {
+      "sms": 0,
+      "sms_del": 0,
+      "sms_fail": 0,
+      "email": 0,
+      "call": 0,
+      "call_ans": 0,
+      "call_secs": 0
+     }
+    },
+    "2026-08-12": {
+     "m": {
+      "sms": 10,
+      "sms_del": 10,
+      "sms_fail": 0,
+      "email": 0,
+      "call": 1,
+      "call_ans": 1,
+      "call_secs": 21
+     },
+     "a": {
+      "sms": 0,
+      "sms_del": 0,
+      "sms_fail": 0,
+      "email": 0,
+      "call": 0,
+      "call_ans": 0,
+      "call_secs": 0
+     }
+    },
+    "2026-09-19": {
+     "m": {
+      "sms": 107,
+      "sms_del": 107,
+      "sms_fail": 0,
+      "email": 1,
+      "call": 18,
+      "call_ans": 16,
+      "call_secs": 933
+     },
+     "a": {
+      "sms": 0,
+      "sms_del": 0,
+      "sms_fail": 0,
+      "email": 0,
+      "call": 0,
+      "call_ans": 0,
+      "call_secs": 0
+     }
+    },
+    "2026-09-09": {
+     "m": {
+      "sms": 0,
+      "sms_del": 0,
+      "sms_fail": 0,
+      "email": 1,
+      "call": 0,
+      "call_ans": 0,
+      "call_secs": 0
+     },
+     "a": {
+      "sms": 0,
+      "sms_del": 0,
+      "sms_fail": 0,
+      "email": 0,
+      "call": 0,
+      "call_ans": 0,
+      "call_secs": 0
+     }
+    },
+    "2026-09-16": {
+     "m": {
+      "sms": 0,
+      "sms_del": 0,
+      "sms_fail": 0,
+      "email": 1,
+      "call": 0,
+      "call_ans": 0,
+      "call_secs": 0
+     },
+     "a": {
+      "sms": 0,
+      "sms_del": 0,
+      "sms_fail": 0,
+      "email": 0,
+      "call": 0,
+      "call_ans": 0,
+      "call_secs": 0
+     }
+    },
+    "2026-07-25": {
+     "m": {
+      "sms": 182,
+      "sms_del": 180,
+      "sms_fail": 2,
+      "email": 0,
+      "call": 25,
+      "call_ans": 23,
+      "call_secs": 1737
+     },
+     "a": {
+      "sms": 0,
+      "sms_del": 0,
+      "sms_fail": 0,
+      "email": 0,
+      "call": 0,
+      "call_ans": 0,
+      "call_secs": 0
+     }
+    },
+    "2026-08-02": {
+     "m": {
+      "sms": 30,
+      "sms_del": 30,
+      "sms_fail": 0,
+      "email": 0,
+      "call": 17,
+      "call_ans": 17,
+      "call_secs": 1765
+     },
+     "a": {
+      "sms": 0,
+      "sms_del": 0,
+      "sms_fail": 0,
+      "email": 0,
+      "call": 0,
+      "call_ans": 0,
+      "call_secs": 0
+     }
+    },
+    "2026-09-07": {
+     "m": {
+      "sms": 11,
+      "sms_del": 11,
+      "sms_fail": 0,
+      "email": 2,
+      "call": 11,
+      "call_ans": 11,
+      "call_secs": 241
+     },
+     "a": {
+      "sms": 0,
+      "sms_del": 0,
+      "sms_fail": 0,
+      "email": 0,
+      "call": 0,
+      "call_ans": 0,
+      "call_secs": 0
+     }
+    },
+    "2026-08-15": {
+     "m": {
+      "sms": 48,
+      "sms_del": 48,
+      "sms_fail": 0,
+      "email": 0,
+      "call": 6,
+      "call_ans": 5,
+      "call_secs": 317
+     },
+     "a": {
+      "sms": 0,
+      "sms_del": 0,
+      "sms_fail": 0,
+      "email": 0,
+      "call": 0,
+      "call_ans": 0,
+      "call_secs": 0
+     }
+    },
+    "2026-08-09": {
+     "m": {
+      "sms": 114,
+      "sms_del": 113,
+      "sms_fail": 1,
+      "email": 0,
+      "call": 12,
+      "call_ans": 10,
+      "call_secs": 464
+     },
+     "a": {
+      "sms": 0,
+      "sms_del": 0,
+      "sms_fail": 0,
+      "email": 0,
+      "call": 0,
+      "call_ans": 0,
+      "call_secs": 0
+     }
+    },
+    "2026-08-22": {
+     "m": {
+      "sms": 80,
+      "sms_del": 80,
+      "sms_fail": 0,
+      "email": 0,
+      "call": 16,
+      "call_ans": 16,
+      "call_secs": 1010
+     },
+     "a": {
+      "sms": 0,
+      "sms_del": 0,
+      "sms_fail": 0,
+      "email": 0,
+      "call": 0,
+      "call_ans": 0,
+      "call_secs": 0
+     }
+    },
+    "2026-08-29": {
+     "m": {
+      "sms": 129,
+      "sms_del": 129,
+      "sms_fail": 0,
+      "email": 0,
+      "call": 19,
+      "call_ans": 17,
+      "call_secs": 1288
+     },
+     "a": {
+      "sms": 0,
+      "sms_del": 0,
+      "sms_fail": 0,
+      "email": 0,
+      "call": 0,
+      "call_ans": 0,
+      "call_secs": 0
+     }
+    },
+    "2026-08-26": {
+     "m": {
+      "sms": 2,
+      "sms_del": 2,
+      "sms_fail": 0,
+      "email": 0,
+      "call": 0,
+      "call_ans": 0,
+      "call_secs": 0
+     },
+     "a": {
+      "sms": 0,
+      "sms_del": 0,
+      "sms_fail": 0,
+      "email": 0,
+      "call": 0,
+      "call_ans": 0,
+      "call_secs": 0
+     }
+    },
+    "2026-08-30": {
+     "m": {
+      "sms": 37,
+      "sms_del": 35,
+      "sms_fail": 2,
+      "email": 1,
+      "call": 15,
+      "call_ans": 14,
+      "call_secs": 1270
+     },
+     "a": {
+      "sms": 0,
+      "sms_del": 0,
+      "sms_fail": 0,
+      "email": 0,
+      "call": 0,
+      "call_ans": 0,
+      "call_secs": 0
+     }
+    },
+    "2026-08-25": {
+     "m": {
+      "sms": 5,
+      "sms_del": 5,
+      "sms_fail": 0,
+      "email": 0,
+      "call": 1,
+      "call_ans": 1,
+      "call_secs": 23
+     },
+     "a": {
+      "sms": 0,
+      "sms_del": 0,
+      "sms_fail": 0,
+      "email": 0,
+      "call": 0,
+      "call_ans": 0,
+      "call_secs": 0
+     }
+    },
+    "2026-08-13": {
+     "m": {
+      "sms": 38,
+      "sms_del": 37,
+      "sms_fail": 1,
+      "email": 0,
+      "call": 0,
+      "call_ans": 0,
+      "call_secs": 0
+     },
+     "a": {
+      "sms": 0,
+      "sms_del": 0,
+      "sms_fail": 0,
+      "email": 0,
+      "call": 0,
+      "call_ans": 0,
+      "call_secs": 0
+     }
+    },
+    "2026-07-12": {
+     "m": {
+      "sms": 8,
+      "sms_del": 8,
+      "sms_fail": 0,
+      "email": 0,
+      "call": 6,
+      "call_ans": 6,
+      "call_secs": 628
+     },
+     "a": {
+      "sms": 0,
+      "sms_del": 0,
+      "sms_fail": 0,
+      "email": 0,
+      "call": 0,
+      "call_ans": 0,
+      "call_secs": 0
+     }
+    },
+    "2026-08-21": {
+     "m": {
+      "sms": 3,
+      "sms_del": 3,
+      "sms_fail": 0,
+      "email": 0,
+      "call": 0,
+      "call_ans": 0,
+      "call_secs": 0
+     },
+     "a": {
+      "sms": 0,
+      "sms_del": 0,
+      "sms_fail": 0,
+      "email": 0,
+      "call": 0,
+      "call_ans": 0,
+      "call_secs": 0
+     }
+    },
+    "2026-08-20": {
+     "m": {
+      "sms": 24,
+      "sms_del": 24,
+      "sms_fail": 0,
+      "email": 0,
+      "call": 3,
+      "call_ans": 3,
+      "call_secs": 286
+     },
+     "a": {
+      "sms": 0,
+      "sms_del": 0,
+      "sms_fail": 0,
+      "email": 0,
+      "call": 0,
+      "call_ans": 0,
+      "call_secs": 0
+     }
+    },
+    "2026-07-27": {
+     "m": {
+      "sms": 2,
+      "sms_del": 2,
+      "sms_fail": 0,
+      "email": 0,
+      "call": 1,
+      "call_ans": 1,
+      "call_secs": 291
+     },
+     "a": {
+      "sms": 0,
+      "sms_del": 0,
+      "sms_fail": 0,
+      "email": 0,
+      "call": 0,
+      "call_ans": 0,
+      "call_secs": 0
+     }
+    },
+    "2026-08-18": {
+     "m": {
+      "sms": 0,
+      "sms_del": 0,
+      "sms_fail": 0,
+      "email": 0,
+      "call": 1,
+      "call_ans": 1,
+      "call_secs": 0
+     },
+     "a": {
+      "sms": 0,
+      "sms_del": 0,
+      "sms_fail": 0,
+      "email": 0,
+      "call": 0,
+      "call_ans": 0,
+      "call_secs": 0
+     }
+    },
+    "2026-07-10": {
+     "m": {
+      "sms": 1,
+      "sms_del": 1,
+      "sms_fail": 0,
+      "email": 0,
+      "call": 2,
+      "call_ans": 2,
+      "call_secs": 590
+     },
+     "a": {
+      "sms": 0,
+      "sms_del": 0,
+      "sms_fail": 0,
+      "email": 0,
+      "call": 0,
+      "call_ans": 0,
+      "call_secs": 0
+     }
+    },
+    "2026-07-09": {
+     "m": {
+      "sms": 11,
+      "sms_del": 9,
+      "sms_fail": 2,
+      "email": 0,
+      "call": 4,
+      "call_ans": 1,
+      "call_secs": 26
+     },
+     "a": {
+      "sms": 0,
+      "sms_del": 0,
+      "sms_fail": 0,
+      "email": 0,
+      "call": 0,
+      "call_ans": 0,
+      "call_secs": 0
+     }
+    },
+    "2026-07-18": {
+     "m": {
+      "sms": 54,
+      "sms_del": 54,
+      "sms_fail": 0,
+      "email": 1,
+      "call": 23,
+      "call_ans": 21,
+      "call_secs": 1263
+     },
+     "a": {
+      "sms": 0,
+      "sms_del": 0,
+      "sms_fail": 0,
+      "email": 0,
+      "call": 0,
+      "call_ans": 0,
+      "call_secs": 0
+     }
+    },
+    "2026-07-22": {
+     "m": {
+      "sms": 6,
+      "sms_del": 6,
+      "sms_fail": 0,
+      "email": 0,
+      "call": 4,
+      "call_ans": 4,
+      "call_secs": 39
+     },
+     "a": {
+      "sms": 0,
+      "sms_del": 0,
+      "sms_fail": 0,
+      "email": 0,
+      "call": 0,
+      "call_ans": 0,
+      "call_secs": 0
+     }
+    },
+    "2026-07-21": {
+     "m": {
+      "sms": 4,
+      "sms_del": 4,
+      "sms_fail": 0,
+      "email": 0,
+      "call": 2,
+      "call_ans": 2,
+      "call_secs": 445
+     },
+     "a": {
+      "sms": 0,
+      "sms_del": 0,
+      "sms_fail": 0,
+      "email": 0,
+      "call": 0,
+      "call_ans": 0,
+      "call_secs": 0
+     }
+    },
+    "2026-06-01": {
+     "m": {
+      "sms": 6,
+      "sms_del": 6,
+      "sms_fail": 0,
+      "email": 0,
+      "call": 2,
+      "call_ans": 2,
+      "call_secs": 47
+     },
+     "a": {
+      "sms": 0,
+      "sms_del": 0,
+      "sms_fail": 0,
+      "email": 0,
+      "call": 0,
+      "call_ans": 0,
+      "call_secs": 0
+     }
+    },
+    "2026-07-15": {
+     "m": {
+      "sms": 16,
+      "sms_del": 16,
+      "sms_fail": 0,
+      "email": 0,
+      "call": 1,
+      "call_ans": 1,
+      "call_secs": 0
+     },
+     "a": {
+      "sms": 0,
+      "sms_del": 0,
+      "sms_fail": 0,
+      "email": 0,
+      "call": 0,
+      "call_ans": 0,
+      "call_secs": 0
+     }
+    },
+    "2026-07-05": {
+     "m": {
+      "sms": 17,
+      "sms_del": 17,
+      "sms_fail": 0,
+      "email": 0,
+      "call": 6,
+      "call_ans": 4,
+      "call_secs": 181
+     },
+     "a": {
+      "sms": 0,
+      "sms_del": 0,
+      "sms_fail": 0,
+      "email": 0,
+      "call": 0,
+      "call_ans": 0,
+      "call_secs": 0
+     }
+    },
+    "2026-07-01": {
+     "m": {
+      "sms": 7,
+      "sms_del": 7,
+      "sms_fail": 0,
+      "email": 0,
+      "call": 2,
+      "call_ans": 2,
+      "call_secs": 21
+     },
+     "a": {
+      "sms": 0,
+      "sms_del": 0,
+      "sms_fail": 0,
+      "email": 0,
+      "call": 0,
+      "call_ans": 0,
+      "call_secs": 0
+     }
+    },
+    "2026-06-20": {
+     "m": {
+      "sms": 53,
+      "sms_del": 53,
+      "sms_fail": 0,
+      "email": 0,
+      "call": 18,
+      "call_ans": 17,
+      "call_secs": 796
+     },
+     "a": {
+      "sms": 0,
+      "sms_del": 0,
+      "sms_fail": 0,
+      "email": 0,
+      "call": 0,
+      "call_ans": 0,
+      "call_secs": 0
+     }
+    },
+    "2026-07-02": {
+     "m": {
+      "sms": 11,
+      "sms_del": 11,
+      "sms_fail": 0,
+      "email": 0,
+      "call": 0,
+      "call_ans": 0,
+      "call_secs": 0
+     },
+     "a": {
+      "sms": 0,
+      "sms_del": 0,
+      "sms_fail": 0,
+      "email": 0,
+      "call": 0,
+      "call_ans": 0,
+      "call_secs": 0
+     }
+    },
+    "2026-06-25": {
+     "m": {
+      "sms": 31,
+      "sms_del": 31,
+      "sms_fail": 0,
+      "email": 1,
+      "call": 0,
+      "call_ans": 0,
+      "call_secs": 0
+     },
+     "a": {
+      "sms": 0,
+      "sms_del": 0,
+      "sms_fail": 0,
+      "email": 0,
+      "call": 0,
+      "call_ans": 0,
+      "call_secs": 0
+     }
+    },
+    "2026-06-24": {
+     "m": {
+      "sms": 21,
+      "sms_del": 21,
+      "sms_fail": 0,
+      "email": 0,
+      "call": 1,
+      "call_ans": 1,
+      "call_secs": 0
+     },
+     "a": {
+      "sms": 0,
+      "sms_del": 0,
+      "sms_fail": 0,
+      "email": 0,
+      "call": 0,
+      "call_ans": 0,
+      "call_secs": 0
+     }
+    },
+    "2026-06-22": {
+     "m": {
+      "sms": 1,
+      "sms_del": 1,
+      "sms_fail": 0,
+      "email": 0,
+      "call": 0,
+      "call_ans": 0,
+      "call_secs": 0
+     },
+     "a": {
+      "sms": 0,
+      "sms_del": 0,
+      "sms_fail": 0,
+      "email": 0,
+      "call": 0,
+      "call_ans": 0,
+      "call_secs": 0
+     }
+    },
+    "2026-06-03": {
+     "m": {
+      "sms": 25,
+      "sms_del": 25,
+      "sms_fail": 0,
+      "email": 0,
+      "call": 3,
+      "call_ans": 3,
+      "call_secs": 560
+     },
+     "a": {
+      "sms": 0,
+      "sms_del": 0,
+      "sms_fail": 0,
+      "email": 0,
+      "call": 0,
+      "call_ans": 0,
+      "call_secs": 0
+     }
+    },
+    "2026-06-09": {
+     "m": {
+      "sms": 1,
+      "sms_del": 1,
+      "sms_fail": 0,
+      "email": 0,
+      "call": 0,
+      "call_ans": 0,
+      "call_secs": 0
+     },
+     "a": {
+      "sms": 0,
+      "sms_del": 0,
+      "sms_fail": 0,
+      "email": 0,
+      "call": 0,
+      "call_ans": 0,
+      "call_secs": 0
+     }
+    },
+    "2026-06-08": {
+     "m": {
+      "sms": 9,
+      "sms_del": 9,
+      "sms_fail": 0,
+      "email": 0,
+      "call": 3,
+      "call_ans": 2,
+      "call_secs": 40
+     },
+     "a": {
+      "sms": 0,
+      "sms_del": 0,
+      "sms_fail": 0,
+      "email": 0,
+      "call": 0,
+      "call_ans": 0,
+      "call_secs": 0
+     }
+    },
+    "2026-06-04": {
+     "m": {
+      "sms": 0,
+      "sms_del": 0,
+      "sms_fail": 0,
+      "email": 0,
+      "call": 1,
+      "call_ans": 1,
+      "call_secs": 31
      },
      "a": {
       "sms": 0,
